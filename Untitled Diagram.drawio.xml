@@ -1,1 +1,25 @@
-<mxfile host="app.diagrams.net" modified="2021-10-02T12:56:10.649Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" version="15.3.8" etag="TqZU515mlYYsyRQVXdSd" type="github"><diagram id="QIAmx5Ds-5C3StvAwnf8">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-10-02T13:05:44.759Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="RRPhbw7LfI0k59qSXpdB" version="15.3.8" type="github">
+  <diagram id="QIAmx5Ds-5C3StvAwnf8" name="Page-1">
+    <mxGraphModel dx="1422" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MsjomQ1htaDSPcAun1U7-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="MsjomQ1htaDSPcAun1U7-1" target="MsjomQ1htaDSPcAun1U7-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MsjomQ1htaDSPcAun1U7-1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="30" y="270" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="MsjomQ1htaDSPcAun1U7-2" value="splash&lt;br&gt;스플래시" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="120" y="250" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MsjomQ1htaDSPcAun1U7-4" value="&lt;font style=&quot;font-size: 25px&quot;&gt;My Little Doctor&lt;br&gt;화면 흐름도&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MsjomQ1htaDSPcAun1U7-5" value="&lt;font style=&quot;font-size: 9px&quot;&gt;Flowchart version 1.0.0&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="120" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
