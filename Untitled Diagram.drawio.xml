@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-03T03:59:26.343Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="L3NFdaOYScheVNUN8MMz" version="15.4.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-03T04:13:01.058Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="faN4W-KyVQyo-JYQnJEi" version="15.4.1" type="github">
   <diagram id="QIAmx5Ds-5C3StvAwnf8" name="Page-1">
     <mxGraphModel dx="1673" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -67,8 +67,11 @@
         <mxCell id="davHnFAPc70-a5NKJAhk-13" value="응급처치 탭" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="480" y="510" width="160" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="davHnFAPc70-a5NKJAhk-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="davHnFAPc70-a5NKJAhk-16" target="davHnFAPc70-a5NKJAhk-101">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-16" value="지도 탭" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="720" y="1090" width="160" height="60" as="geometry" />
+          <mxGeometry x="720" y="1010" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="davHnFAPc70-a5NKJAhk-18" target="davHnFAPc70-a5NKJAhk-24">
           <mxGeometry relative="1" as="geometry" />
@@ -152,7 +155,7 @@
           <mxGeometry x="1600" y="530" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-64" value="게시판 탭" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="720" y="1170" width="160" height="60" as="geometry" />
+          <mxGeometry x="720" y="1330" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-66" value="어카운트 필요?" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1620" y="600" width="120" height="60" as="geometry" />
@@ -195,6 +198,21 @@
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-95" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1250" y="520" width="10" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="davHnFAPc70-a5NKJAhk-97" value="지도 api 연결&lt;br&gt;(병원 키워드)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="1010" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="davHnFAPc70-a5NKJAhk-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="davHnFAPc70-a5NKJAhk-101" target="davHnFAPc70-a5NKJAhk-97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="davHnFAPc70-a5NKJAhk-101" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1000" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="davHnFAPc70-a5NKJAhk-103" value="사용자 위치&lt;br&gt;권한 허용/불가" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="1010" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="davHnFAPc70-a5NKJAhk-106" value="아파요&lt;br&gt;처럼?" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="985" y="1089" width="150" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
