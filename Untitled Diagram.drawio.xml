@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-03T02:44:31.834Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="TmB3WtGIAhdKNnoOIGk4" version="15.4.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-03T03:02:09.014Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="p1BlQefmARouwC5PFlDr" version="15.4.1" type="github">
   <diagram id="QIAmx5Ds-5C3StvAwnf8" name="Page-1">
     <mxGraphModel dx="1422" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -29,7 +29,7 @@
           <mxGeometry x="360" y="250" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="w-shk_KtAfEg6DTLriY0-2" value="자가진단 탭" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="640" y="250" width="160" height="60" as="geometry" />
+          <mxGeometry x="600" y="250" width="160" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
