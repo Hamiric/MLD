@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-03T04:14:06.108Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="aL9mxHHrpl0W57iyqpxz" version="15.4.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-03T04:31:52.962Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="fcLc2eemeRx6NfzPLTCz" version="15.4.1" type="github">
   <diagram id="QIAmx5Ds-5C3StvAwnf8" name="Page-1">
     <mxGraphModel dx="1673" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -53,13 +53,13 @@
           <mxGeometry x="480" y="800" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="110" y="400" width="250" height="290" as="geometry" />
+          <mxGeometry x="40" y="360" width="250" height="290" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="185" y="590" width="110" height="50" as="geometry" />
+          <mxGeometry x="100" y="540" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-11" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="330" y="400" width="30" height="30" as="geometry" />
+          <mxGeometry x="230" y="360" width="60" height="230" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="davHnFAPc70-a5NKJAhk-13" target="davHnFAPc70-a5NKJAhk-68">
           <mxGeometry relative="1" as="geometry" />
@@ -104,7 +104,7 @@
           <mxGeometry x="1200" y="250" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-32" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="200" y="650" width="80" height="20" as="geometry" />
+          <mxGeometry x="130" y="610" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="davHnFAPc70-a5NKJAhk-33" target="davHnFAPc70-a5NKJAhk-59">
           <mxGeometry relative="1" as="geometry" />
@@ -167,52 +167,58 @@
           <mxGeometry x="920" y="800" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-83" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="500" width="250" height="280" as="geometry" />
+          <mxGeometry x="880" y="480" width="250" height="280" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-84" value="심장" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="500" width="40" height="40" as="geometry" />
+          <mxGeometry x="880" y="480" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-85" value="호흡" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="540" width="40" height="40" as="geometry" />
+          <mxGeometry x="880" y="520" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-86" value="발작" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="580" width="40" height="40" as="geometry" />
+          <mxGeometry x="880" y="560" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-87" value="키워드" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="620" width="40" height="40" as="geometry" />
+          <mxGeometry x="880" y="600" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-88" value="&#xa;&#xa;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(248, 249, 250); display: inline; float: none;&quot;&gt;키워드&lt;/span&gt;&#xa;&#xa;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="660" width="40" height="40" as="geometry" />
+          <mxGeometry x="880" y="640" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-89" value="키워드" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="700" width="40" height="40" as="geometry" />
+          <mxGeometry x="880" y="680" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-90" value="키워드" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="740" width="40" height="40" as="geometry" />
+          <mxGeometry x="880" y="720" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-91" value="검색 창" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1150" y="500" width="110" height="20" as="geometry" />
+          <mxGeometry x="1020" y="480" width="110" height="20" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-92" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1130" y="500" width="20" height="20" as="geometry" />
+          <mxGeometry x="1000" y="480" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-95" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1250" y="520" width="10" height="260" as="geometry" />
+          <mxGeometry x="1120" y="500" width="10" height="260" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-97" value="지도 api 연결&lt;br&gt;(병원 키워드)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="1250" y="1010" width="160" height="60" as="geometry" />
+          <mxGeometry x="1160" y="1010" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="davHnFAPc70-a5NKJAhk-101" target="davHnFAPc70-a5NKJAhk-97">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-101" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="920" y="1000" width="280" height="80" as="geometry" />
+          <mxGeometry x="920" y="1000" width="180" height="80" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-103" value="사용자 위치&lt;br&gt;권한 허용/불가" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="950" y="1010" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="davHnFAPc70-a5NKJAhk-106" value="아파요&lt;br&gt;처럼?" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="985" y="1089" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="davHnFAPc70-a5NKJAhk-110" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1355" y="970" width="255" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="davHnFAPc70-a5NKJAhk-111" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1355" y="970" width="255" height="140" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
