@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-17T16:01:29.004Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="GAsZMU42052d-kLGHn0M" version="15.5.4" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-10-17T16:03:52.557Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="KNaJuIT88lbxSmSog-Cl" version="15.5.4" type="github" pages="2">
   <diagram id="QIAmx5Ds-5C3StvAwnf8" name="Page-1">
     <mxGraphModel dx="1422" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -170,7 +170,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="i5bWaSJ_yRizVA3H0vrT" name="Page-2">
-    <mxGraphModel dx="1422" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1673" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="XPFrFwVXtcWs2SFEOaVE-0" />
         <mxCell id="XPFrFwVXtcWs2SFEOaVE-1" parent="XPFrFwVXtcWs2SFEOaVE-0" />
@@ -322,17 +322,23 @@
         <mxCell id="geehRVg4-ZZbYJdMEdlG-47" value="공지사항 / 약관" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
           <mxGeometry x="1070" y="770" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="geehRVg4-ZZbYJdMEdlG-48" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-48" value="어플설정" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
           <mxGeometry x="1260" y="770" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="geehRVg4-ZZbYJdMEdlG-49" value="- 로그인 / 로그아웃&lt;br&gt;-&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;dashed=1;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-49" value="- 로그인 / 로그아웃&lt;br&gt;- 회원탈퇴&lt;br&gt;- 연동(게스트탈출)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;dashed=1;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
           <mxGeometry x="880" y="810" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="geehRVg4-ZZbYJdMEdlG-50" value="2. 로그인&lt;br&gt;- 간편로그인&lt;br&gt;- 아이디/비밀번호 로그인&lt;br&gt;- 게스트 로그인" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;dashed=1;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
           <mxGeometry x="500" y="310" width="160" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="geehRVg4-ZZbYJdMEdlG-51" value="2. 로그인&lt;br&gt;- 간편로그인&lt;br&gt;- 아이디/비밀번호 로그인" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;dashed=1;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-51" value="3. 아이디/비밀번호 찾기" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;dashed=1;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
           <mxGeometry x="500" y="370" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-52" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;dashed=1;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
+          <mxGeometry x="1070" y="810" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-53" value="- 알림설정" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;dashed=1;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
+          <mxGeometry x="1260" y="810" width="160" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
