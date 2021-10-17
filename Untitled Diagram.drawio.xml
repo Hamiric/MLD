@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-17T16:11:29.332Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="r9Sg5zlGfosKFesGd77z" version="15.5.4" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-10-17T16:54:34.286Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="dyL2thDtAIDyOTh5sMCQ" version="15.5.4" type="github" pages="2">
   <diagram id="QIAmx5Ds-5C3StvAwnf8" name="Page-1">
     <mxGraphModel dx="1422" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -262,13 +262,13 @@
         <mxCell id="geehRVg4-ZZbYJdMEdlG-22" value="" style="group;dashed=1;dashPattern=1 4;" vertex="1" connectable="0" parent="XPFrFwVXtcWs2SFEOaVE-1">
           <mxGeometry x="880" y="330" width="160" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="geehRVg4-ZZbYJdMEdlG-20" value="진료기록 입력" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="geehRVg4-ZZbYJdMEdlG-22">
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-20" value="진료기록 관리" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="geehRVg4-ZZbYJdMEdlG-22">
           <mxGeometry width="160" height="40" as="geometry" />
         </mxCell>
         <mxCell id="geehRVg4-ZZbYJdMEdlG-21" value="- 달력 / 진료 날짜&lt;br&gt;- 처방전 / 처방약품" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=default;dashed=1;" vertex="1" parent="geehRVg4-ZZbYJdMEdlG-22">
           <mxGeometry y="40" width="160" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="geehRVg4-ZZbYJdMEdlG-23" value="기능" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-23" value="진료기록 입력" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
           <mxGeometry x="1070" y="330" width="160" height="40" as="geometry" />
         </mxCell>
         <mxCell id="geehRVg4-ZZbYJdMEdlG-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="XPFrFwVXtcWs2SFEOaVE-1" source="geehRVg4-ZZbYJdMEdlG-24" target="wq6c-SMbp2bzeFaHXHGw-0">
@@ -346,8 +346,11 @@
         <mxCell id="geehRVg4-ZZbYJdMEdlG-54" value="건강정보" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
           <mxGeometry x="880" y="200" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="geehRVg4-ZZbYJdMEdlG-56" value="- 건강에 관한 기사" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;dashed=1;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-56" value="- 건강에 관한 상식" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;dashed=1;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
           <mxGeometry x="880" y="240" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-57" value="- 처방전 / 약봉투 입력&lt;br&gt;- 의약품 입력" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;dashed=1;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
+          <mxGeometry x="1070" y="370" width="160" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
