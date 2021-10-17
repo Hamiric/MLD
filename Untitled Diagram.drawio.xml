@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-17T15:40:08.227Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="i4hCZn1ikO0q1TPBQNGM" version="15.5.4" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-10-17T15:42:53.159Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="buEwCVtAZTDbe4W3P9Um" version="15.5.4" type="github" pages="2">
   <diagram id="QIAmx5Ds-5C3StvAwnf8" name="Page-1">
     <mxGraphModel dx="1422" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -238,6 +238,12 @@
         </mxCell>
         <mxCell id="geehRVg4-ZZbYJdMEdlG-11" value="설정(옵션)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
           <mxGeometry x="500" y="580" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-19" value="기능" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
+          <mxGeometry x="1120" y="110" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="geehRVg4-ZZbYJdMEdlG-20" value="진료기록 입력" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="XPFrFwVXtcWs2SFEOaVE-1">
+          <mxGeometry x="690" y="290" width="160" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
