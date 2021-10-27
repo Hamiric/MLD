@@ -1,0 +1,18 @@
+com/example/mylittledoctor/header.java
+ com.example.mylittledoctor.header
+com/example/mylittledoctor/BuildConfig.java
+ com.example.mylittledoctor.BuildConfig
+com/example/mylittledoctor/LocationResult.java
+ com.example.mylittledoctor.LocationResult
+com/example/mylittledoctor/item.java
+ com.example.mylittledoctor.item
+com/example/mylittledoctor/body.java
+ com.example.mylittledoctor.body
+com/example/mylittledoctor/items.java
+ com.example.mylittledoctor.items
+com/example/mylittledoctor/MainActivity.java
+ com.example.mylittledoctor.MainActivity
+ com.example.mylittledoctor.MainActivity$1
+ com.example.mylittledoctor.MainActivity$2
+com/example/mylittledoctor/hsptlAPI.java
+ com.example.mylittledoctor.hsptlAPI
