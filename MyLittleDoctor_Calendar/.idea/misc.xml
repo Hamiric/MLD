@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/GitBash/MLD_Calendar/app/src/main/res/layout/activity_main.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/drawable-v24/botton_image.xml" value="0.31145833333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/drawable-v24/menu_image.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/drawable/alram_image.xml" value="0.31145833333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/drawable/botton_image.xml" value="0.3875" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/drawable/button.xml" value="0.24270833333333333" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/drawable/calendar_my_selector.xml" value="0.35555555555555557" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2713541666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/drawable/item_object.xml" value="0.31145833333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/drawable/menu_image.xml" value="0.24270833333333333" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/layout/add_dosing_list.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/layout/dosing_list.xml" value="0.2265625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/layout/item.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/layout/main_ac.xml" value="0.2265625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/layout/numfile.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MLD_C/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26481481481481484" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
