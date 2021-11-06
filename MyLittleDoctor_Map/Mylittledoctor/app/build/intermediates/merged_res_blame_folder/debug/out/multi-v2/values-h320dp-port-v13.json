@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\82102\\.gradle\\caches\\transforms-3\\c2e76fb5e086b5c906002f45c03cd24a\\transformed\\material-1.4.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+                    "source": "C:\\Users\\82102\\.gradle\\caches\\transforms-3\\8879e93d76e4dd0dd54abf55818b53ff\\transformed\\material-1.5.0-alpha05\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
