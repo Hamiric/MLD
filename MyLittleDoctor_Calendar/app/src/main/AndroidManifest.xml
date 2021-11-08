@@ -20,6 +20,8 @@
 
         <activity android:name=".add_dosing_list"/>
 
+        <activity android:name=".PopupActivity" android:theme="@android:style/Theme.Dialog"/>
+
     </application>
 
 </manifest>

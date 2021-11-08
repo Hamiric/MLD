@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity
 
     private Button btn_add;
 
+    private int Year, Month, Day;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -64,9 +66,9 @@ public class MainActivity extends AppCompatActivity
         materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
-                int Year = date.getYear();
-                int Month = date.getMonth();
-                int Day = date.getDay();
+                Year = date.getYear();
+                Month = date.getMonth();
+                Day = date.getDay();
 
                 SelectDay_textview.setVisibility(View.VISIBLE);
                 SelectDay_textview.setText(String.format("%d" + "월 " + "%d" + "일", Month + 1, Day));
