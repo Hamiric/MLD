@@ -10,10 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MLD">
         <activity
+            android:name=".SideEffect"
+            android:exported="true" />
+        <activity
+            android:name=".News"
+            android:exported="true" />
+        <activity
             android:name=".PDFOpener"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Encyclopedia"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

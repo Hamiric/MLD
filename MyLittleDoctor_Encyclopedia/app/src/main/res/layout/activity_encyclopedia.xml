@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".News">
 
     <TextView
         android:id="@+id/textView"
@@ -28,6 +28,7 @@
         android:foreground="@drawable/back"
         android:background="#00ff0000"
         android:backgroundTint="@color/white"
+        android:onClick="GoNews"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -43,6 +44,7 @@
         android:background="#00ff0000"
         android:backgroundTint="@color/white"
         android:foreground="@drawable/menu"
+        android:onClick="GoSideEffect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.791"
         app:layout_constraintStart_toEndOf="@+id/textView"
