@@ -1,0 +1,24 @@
+package com.example.mld_c;
+
+public class ListItem_dosing {
+
+    private String title;
+    private String sub;
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getSub() {
+        return sub;
+    }
+
+    public void setSub(String sub) {
+        this.sub = sub;
+    }
+}

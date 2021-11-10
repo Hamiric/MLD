@@ -4,7 +4,7 @@ ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\Andr
 INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
 INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
 INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
-MERGED from [com.google.android.material:material:1.4.0] C:\Users\82102\.gradle\caches\transforms-3\c2e76fb5e086b5c906002f45c03cd24a\transformed\material-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.5.0-alpha05] C:\Users\82102\.gradle\caches\transforms-3\8879e93d76e4dd0dd54abf55818b53ff\transformed\material-1.5.0-alpha05\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] C:\Users\82102\.gradle\caches\transforms-3\3721de789aff74f2f52f02659b18895c\transformed\constraintlayout-2.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.naver.maps:map-sdk:3.12.0] C:\Users\82102\.gradle\caches\transforms-3\56f5255eba218b9c9460453aa38a9187\transformed\jetified-map-sdk-3.12.0\AndroidManifest.xml:2:1-38:12
 MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\82102\.gradle\caches\transforms-3\ccd6c517801f56e7200472775579e27c\transformed\appcompat-1.3.1\AndroidManifest.xml:17:1-24:12
@@ -19,7 +19,7 @@ MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\82102\.gradle\caches\tra
 MERGED from [androidx.activity:activity:1.2.4] C:\Users\82102\.gradle\caches\transforms-3\d0a79b936e419dd387b875699ee4b62c\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\82102\.gradle\caches\transforms-3\8ada507a1dd724fe6991d5ce94b4cd54\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\6fb69af6583698668532bf0fd35caf8f\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\9ae11d25ffc96a1bf108d9cb11000878\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\82102\.gradle\caches\transforms-3\b67812afff6c750eef31b2f5aecf4fb6\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\82102\.gradle\caches\transforms-3\8eea484709a67dddc1ab9ae1893abd2b\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\8a7b9e471f23c1540e322373ba839543\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.2.0] C:\Users\82102\.gradle\caches\transforms-3\270f36836ed73a45dbff76b561bed474\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -30,7 +30,7 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\82102\.gr
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\21aff1fa3790b705ad8e19b1c47e0d56\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\82102\.gradle\caches\transforms-3\52b8a03cfc4c20a0c9c78819018423c4\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\fbf631149de996a78c67c939d36f7655\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\cd32edd474bb2a02875747f09057a6e3\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\82102\.gradle\caches\transforms-3\dcb62ce1a3c954b541338f55f5bfa38e\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media:media:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\bc549059837f713a6813ae954483e241\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\634062af7ba6565b6ce63935447f68fe\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\343c797141be332cf662fb965493c0b7\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -92,8 +92,8 @@ ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\Andr
 		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:9:22-78
 application
 ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:12:5-37:19
-MERGED from [com.google.android.material:material:1.4.0] C:\Users\82102\.gradle\caches\transforms-3\c2e76fb5e086b5c906002f45c03cd24a\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.4.0] C:\Users\82102\.gradle\caches\transforms-3\c2e76fb5e086b5c906002f45c03cd24a\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.5.0-alpha05] C:\Users\82102\.gradle\caches\transforms-3\8879e93d76e4dd0dd54abf55818b53ff\transformed\material-1.5.0-alpha05\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.5.0-alpha05] C:\Users\82102\.gradle\caches\transforms-3\8879e93d76e4dd0dd54abf55818b53ff\transformed\material-1.5.0-alpha05\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] C:\Users\82102\.gradle\caches\transforms-3\3721de789aff74f2f52f02659b18895c\transformed\constraintlayout-2.1.1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] C:\Users\82102\.gradle\caches\transforms-3\3721de789aff74f2f52f02659b18895c\transformed\constraintlayout-2.1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.naver.maps:map-sdk:3.12.0] C:\Users\82102\.gradle\caches\transforms-3\56f5255eba218b9c9460453aa38a9187\transformed\jetified-map-sdk-3.12.0\AndroidManifest.xml:20:5-36:19
@@ -125,7 +125,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\82
 	android:allowBackup
 		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:21:9-52
+		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:21:9-59
 	android:usesCleartextTraffic
 		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:14:9-44
 meta-data#com.naver.maps.map.CLIENT_ID
@@ -154,8 +154,8 @@ uses-sdk
 INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml
-MERGED from [com.google.android.material:material:1.4.0] C:\Users\82102\.gradle\caches\transforms-3\c2e76fb5e086b5c906002f45c03cd24a\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.4.0] C:\Users\82102\.gradle\caches\transforms-3\c2e76fb5e086b5c906002f45c03cd24a\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.5.0-alpha05] C:\Users\82102\.gradle\caches\transforms-3\8879e93d76e4dd0dd54abf55818b53ff\transformed\material-1.5.0-alpha05\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.5.0-alpha05] C:\Users\82102\.gradle\caches\transforms-3\8879e93d76e4dd0dd54abf55818b53ff\transformed\material-1.5.0-alpha05\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] C:\Users\82102\.gradle\caches\transforms-3\3721de789aff74f2f52f02659b18895c\transformed\constraintlayout-2.1.1\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] C:\Users\82102\.gradle\caches\transforms-3\3721de789aff74f2f52f02659b18895c\transformed\constraintlayout-2.1.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.naver.maps:map-sdk:3.12.0] C:\Users\82102\.gradle\caches\transforms-3\56f5255eba218b9c9460453aa38a9187\transformed\jetified-map-sdk-3.12.0\AndroidManifest.xml:5:5-7:41
@@ -184,8 +184,8 @@ MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\82102\.gradl
 MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\82102\.gradle\caches\transforms-3\8ada507a1dd724fe6991d5ce94b4cd54\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\6fb69af6583698668532bf0fd35caf8f\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\6fb69af6583698668532bf0fd35caf8f\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\9ae11d25ffc96a1bf108d9cb11000878\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\9ae11d25ffc96a1bf108d9cb11000878\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\82102\.gradle\caches\transforms-3\b67812afff6c750eef31b2f5aecf4fb6\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\82102\.gradle\caches\transforms-3\b67812afff6c750eef31b2f5aecf4fb6\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\82102\.gradle\caches\transforms-3\8eea484709a67dddc1ab9ae1893abd2b\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\82102\.gradle\caches\transforms-3\8eea484709a67dddc1ab9ae1893abd2b\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\8a7b9e471f23c1540e322373ba839543\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
@@ -206,8 +206,8 @@ MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\82102\.gradle\ca
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\82102\.gradle\caches\transforms-3\52b8a03cfc4c20a0c9c78819018423c4\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\fbf631149de996a78c67c939d36f7655\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\fbf631149de996a78c67c939d36f7655\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\cd32edd474bb2a02875747f09057a6e3\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\cd32edd474bb2a02875747f09057a6e3\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\82102\.gradle\caches\transforms-3\dcb62ce1a3c954b541338f55f5bfa38e\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\82102\.gradle\caches\transforms-3\dcb62ce1a3c954b541338f55f5bfa38e\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.media:media:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\bc549059837f713a6813ae954483e241\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\bc549059837f713a6813ae954483e241\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\634062af7ba6565b6ce63935447f68fe\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44

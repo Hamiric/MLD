@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.36770833333333336" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/drawable/edge.xml" value="0.11018518518518519" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/drawable/edge2.xml" value="0.13425925925925927" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/drawable/ic_launcher_background.xml" value="0.36770833333333336" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/drawable/marker_icon.xml" value="0.2234375" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/layout/bottom_sheet.xml" value="0.11296296296296296" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/layout/hsptldata.xml" value="0.17755825734549138" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/layout/item_recycler.xml" value="0.11555555555555555" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13425925925925927" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Mylittledoctor/app/src/main/res/xml/network_security_config.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

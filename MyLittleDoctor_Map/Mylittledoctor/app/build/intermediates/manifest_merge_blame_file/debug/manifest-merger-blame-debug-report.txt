@@ -57,8 +57,8 @@
 33        android:supportsRtl="true"
 33-->C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:20:9-35
 34        android:testOnly="true"
-35        android:theme="@style/Theme.Mylittledoctor"
-35-->C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:21:9-52
+35        android:theme="@style/Theme.AppCompat.NoActionBar"
+35-->C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:21:9-59
 36        android:usesCleartextTraffic="true" >
 36-->C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:14:9-44
 37
