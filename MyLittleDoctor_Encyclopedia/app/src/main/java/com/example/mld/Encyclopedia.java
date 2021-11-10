@@ -15,21 +15,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity {
+public class Encyclopedia extends AppCompatActivity {
     ListView pdfListView;
     ArrayList<String> stringArrayList = new ArrayList<String>();
     ArrayAdapter<String> adapter;
+
     @Override
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_encyclopedia);
 
         ActionBar actionBar = getSupportActionBar();
         SearchView searchView = findViewById(R.id.search_view);
@@ -220,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
         stringArrayList.add("");
         stringArrayList.add("");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1,stringArrayList)
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(Encyclopedia.this,android.R.layout.simple_list_item_1,stringArrayList)
         {
             @NonNull
             @Override
@@ -257,6 +260,8 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
     }
 
     @Override
@@ -267,5 +272,17 @@ public class MainActivity extends AppCompatActivity {
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
         return super.onCreateOptionsMenu(menu);
 
+    }
+
+    public void GoNews(View view){
+        Button GoNews = findViewById(R.id.en_btn1);
+        Intent intent1 = new Intent(this,News.class);
+        startActivity(intent1);
+    }
+
+    public void GoSideEffect(View view){
+        Button GoSideEffect = findViewById(R.id.en_btn2);
+        Intent intent2 = new Intent(this,SideEffect.class);
+        startActivity(intent2);
     }
 }
