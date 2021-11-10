@@ -2554,6 +2554,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable icon_action_build
+drawable icon_action_search
 drawable icon_navigation_chevron_left
 drawable icon_navigation_expend_less
 drawable m3_appbar_background
@@ -2655,6 +2656,22 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
+id Info_dutyName
+id Info_item_dgidIdName
+id Info_item_dutyAddr
+id Info_item_dutyName
+id Info_item_dutyTel1
+id Info_item_dutyTime1
+id Info_item_dutyTime2
+id Info_item_dutyTime3
+id Info_item_dutyTime4
+id Info_item_dutyTime5
+id Info_item_dutyTime6
+id Info_item_dutyTime7
+id Info_item_dutyTime8
+id Info_map
+id Info_recyclerView
+id Info_tab_btn1
 id META
 id NO_DEBUG
 id SHIFT
@@ -2662,6 +2679,7 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id Search_map
 id TOP_END
 id TOP_START
 id TextView1_h
@@ -2833,6 +2851,7 @@ id easeInOut
 id easeOut
 id east
 id edit_query
+id edittext
 id elastic
 id end
 id endToStart
@@ -3152,6 +3171,7 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id view
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3273,10 +3293,12 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout item_info
 layout item_recycler
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
+layout map_info
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

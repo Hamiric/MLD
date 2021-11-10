@@ -18,13 +18,13 @@ public class LocationResult$$TypeAdapter implements TypeAdapter<LocationResult> 
     childElementBinders.put("header", new ChildElementBinder<LocationResult>() {
       @Override
       public void fromXml(XmlReader reader, TikXmlConfig config, LocationResult value) throws IOException {
-        value.header = config.getTypeAdapter(header.class).fromXml(reader, config);
+        value.header = config.getTypeAdapter(LocationResult.header.class).fromXml(reader, config);
       }
     });
     childElementBinders.put("body", new ChildElementBinder<LocationResult>() {
       @Override
       public void fromXml(XmlReader reader, TikXmlConfig config, LocationResult value) throws IOException {
-        value.body = config.getTypeAdapter(body.class).fromXml(reader, config);
+        value.body = config.getTypeAdapter(LocationResult.body.class).fromXml(reader, config);
       }
     });
   }
@@ -73,10 +73,10 @@ public class LocationResult$$TypeAdapter implements TypeAdapter<LocationResult> 
         writer.beginElement(overridingXmlElementTagName);
       }
       if (value.header != null) {
-        config.getTypeAdapter(header.class).toXml(writer, config, value.header, "header");
+        config.getTypeAdapter(LocationResult.header.class).toXml(writer, config, value.header, "header");
       }
       if (value.body != null) {
-        config.getTypeAdapter(body.class).toXml(writer, config, value.body, "body");
+        config.getTypeAdapter(LocationResult.body.class).toXml(writer, config, value.body, "body");
       }
       writer.endElement();
     }

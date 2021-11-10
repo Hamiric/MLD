@@ -13,24 +13,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class items$$TypeAdapter implements TypeAdapter<items> {
-  private Map<String, ChildElementBinder<items>> childElementBinders = new  HashMap<String, ChildElementBinder<items>>();
+public class items$$TypeAdapter implements TypeAdapter<LocationResult.body.items> {
+  private Map<String, ChildElementBinder<LocationResult.body.items>> childElementBinders = new  HashMap<String, ChildElementBinder<LocationResult.body.items>>();
 
   public items$$TypeAdapter() {
-    childElementBinders.put("item", new ChildElementBinder<items>() {
+    childElementBinders.put("item", new ChildElementBinder<LocationResult.body.items>() {
       @Override
-      public void fromXml(XmlReader reader, TikXmlConfig config, items value) throws IOException {
+      public void fromXml(XmlReader reader, TikXmlConfig config, LocationResult.body.items value) throws IOException {
         if (value.item == null) {
-          value.item = new ArrayList<item>();
+          value.item = new ArrayList<LocationResult.body.items.item>();
         }
-        value.item.add((item) config.getTypeAdapter(item.class).fromXml(reader, config) );
+        value.item.add((LocationResult.body.items.item) config.getTypeAdapter(LocationResult.body.items.item.class).fromXml(reader, config) );
       }
     });
   }
 
   @Override
-  public items fromXml(XmlReader reader, TikXmlConfig config) throws IOException {
-    items value = new items();
+  public LocationResult.body.items fromXml(XmlReader reader, TikXmlConfig config) throws IOException {
+    LocationResult.body.items value = new LocationResult.body.items();
     while(reader.hasAttribute()) {
       String attributeName = reader.nextAttributeName();
       if (config.exceptionOnUnreadXml() && !attributeName.startsWith("xmlns")) {
@@ -42,7 +42,7 @@ public class items$$TypeAdapter implements TypeAdapter<items> {
       if (reader.hasElement()) {
         reader.beginElement();
         String elementName = reader.nextElementName();
-        ChildElementBinder<items> childElementBinder = childElementBinders.get(elementName);
+        ChildElementBinder<LocationResult.body.items> childElementBinder = childElementBinders.get(elementName);
         if (childElementBinder != null) {
           childElementBinder.fromXml(reader, config, value);
           reader.endElement();
@@ -64,7 +64,7 @@ public class items$$TypeAdapter implements TypeAdapter<items> {
   }
 
   @Override
-  public void toXml(XmlWriter writer, TikXmlConfig config, items value, String overridingXmlElementTagName) throws IOException {
+  public void toXml(XmlWriter writer, TikXmlConfig config, LocationResult.body.items value, String overridingXmlElementTagName) throws IOException {
     if (value != null) {
       if (overridingXmlElementTagName == null) {
         writer.beginElement("items");
@@ -72,11 +72,11 @@ public class items$$TypeAdapter implements TypeAdapter<items> {
         writer.beginElement(overridingXmlElementTagName);
       }
       if (value.item != null) {
-        List<item> list = value.item;
+        List<LocationResult.body.items.item> list = value.item;
         int listSize = list.size();
         for (int i =0; i<listSize; i++) {
-          item item = list.get(i);
-          config.getTypeAdapter(item.class).toXml(writer, config, item, "item");
+          LocationResult.body.items.item item = list.get(i);
+          config.getTypeAdapter(LocationResult.body.items.item.class).toXml(writer, config, item, "item");
         }
       }
       writer.endElement();

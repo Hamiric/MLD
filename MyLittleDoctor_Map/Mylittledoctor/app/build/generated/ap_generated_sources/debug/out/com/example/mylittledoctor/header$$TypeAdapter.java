@@ -11,13 +11,13 @@ import java.lang.String;
 import java.util.HashMap;
 import java.util.Map;
 
-public class header$$TypeAdapter implements TypeAdapter<header> {
-  private Map<String, ChildElementBinder<header>> childElementBinders = new  HashMap<String, ChildElementBinder<header>>();
+public class header$$TypeAdapter implements TypeAdapter<LocationResult.header> {
+  private Map<String, ChildElementBinder<LocationResult.header>> childElementBinders = new  HashMap<String, ChildElementBinder<LocationResult.header>>();
 
   public header$$TypeAdapter() {
-    childElementBinders.put("resultCode", new ChildElementBinder<header>() {
+    childElementBinders.put("resultCode", new ChildElementBinder<LocationResult.header>() {
       @Override
-      public void fromXml(XmlReader reader, TikXmlConfig config, header value) throws IOException {
+      public void fromXml(XmlReader reader, TikXmlConfig config, LocationResult.header value) throws IOException {
         while(reader.hasAttribute()) {
           String attributeName = reader.nextAttributeName();
           if (config.exceptionOnUnreadXml() && !attributeName.startsWith("xmlns")) {
@@ -28,9 +28,9 @@ public class header$$TypeAdapter implements TypeAdapter<header> {
         value.resultCode = reader.nextTextContentAsInt();
       }
     });
-    childElementBinders.put("resultMsg", new ChildElementBinder<header>() {
+    childElementBinders.put("resultMsg", new ChildElementBinder<LocationResult.header>() {
       @Override
-      public void fromXml(XmlReader reader, TikXmlConfig config, header value) throws IOException {
+      public void fromXml(XmlReader reader, TikXmlConfig config, LocationResult.header value) throws IOException {
         while(reader.hasAttribute()) {
           String attributeName = reader.nextAttributeName();
           if (config.exceptionOnUnreadXml() && !attributeName.startsWith("xmlns")) {
@@ -44,8 +44,8 @@ public class header$$TypeAdapter implements TypeAdapter<header> {
   }
 
   @Override
-  public header fromXml(XmlReader reader, TikXmlConfig config) throws IOException {
-    header value = new header();
+  public LocationResult.header fromXml(XmlReader reader, TikXmlConfig config) throws IOException {
+    LocationResult.header value = new LocationResult.header();
     while(reader.hasAttribute()) {
       String attributeName = reader.nextAttributeName();
       if (config.exceptionOnUnreadXml() && !attributeName.startsWith("xmlns")) {
@@ -57,7 +57,7 @@ public class header$$TypeAdapter implements TypeAdapter<header> {
       if (reader.hasElement()) {
         reader.beginElement();
         String elementName = reader.nextElementName();
-        ChildElementBinder<header> childElementBinder = childElementBinders.get(elementName);
+        ChildElementBinder<LocationResult.header> childElementBinder = childElementBinders.get(elementName);
         if (childElementBinder != null) {
           childElementBinder.fromXml(reader, config, value);
           reader.endElement();
@@ -79,7 +79,7 @@ public class header$$TypeAdapter implements TypeAdapter<header> {
   }
 
   @Override
-  public void toXml(XmlWriter writer, TikXmlConfig config, header value, String overridingXmlElementTagName) throws IOException {
+  public void toXml(XmlWriter writer, TikXmlConfig config, LocationResult.header value, String overridingXmlElementTagName) throws IOException {
     if (value != null) {
       if (overridingXmlElementTagName == null) {
         writer.beginElement("header");

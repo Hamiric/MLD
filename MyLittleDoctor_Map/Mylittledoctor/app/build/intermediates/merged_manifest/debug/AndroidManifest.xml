@@ -49,6 +49,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.mylittledoctor.MapInfoActivity" />
         <activity
             android:name="com.naver.maps.map.app.LegendActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"

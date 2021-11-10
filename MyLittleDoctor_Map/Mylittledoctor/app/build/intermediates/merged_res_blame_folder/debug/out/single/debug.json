@@ -4,16 +4,20 @@
         "source": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\drawable_edge.xml.flat",
-        "source": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\src\\main\\res\\drawable\\edge.xml"
-    },
-    {
         "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\drawable_hospital_marker.png.flat",
         "source": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\src\\main\\res\\drawable\\hospital_marker.png"
     },
     {
+        "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\drawable_edge.xml.flat",
+        "source": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\src\\main\\res\\drawable\\edge.xml"
+    },
+    {
         "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\layout_item_info.xml.flat",
+        "source": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\src\\main\\res\\layout\\item_info.xml"
     },
     {
         "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
@@ -22,6 +26,10 @@
     {
         "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\drawable_icon_action_search.png.flat",
+        "source": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\src\\main\\res\\drawable\\icon_action_search.png"
     },
     {
         "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\layout_item_recycler.xml.flat",
@@ -58,6 +66,10 @@
     {
         "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\layout_map_info.xml.flat",
+        "source": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\src\\main\\res\\layout\\map_info.xml"
     },
     {
         "merged": "C:\\Users\\82102\\AndroidStudioProjects\\Mylittledoctor\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",

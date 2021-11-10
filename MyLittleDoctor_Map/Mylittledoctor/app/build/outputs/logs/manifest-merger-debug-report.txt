@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
+ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-41:12
 MERGED from [com.google.android.material:material:1.5.0-alpha05] C:\Users\82102\.gradle\caches\transforms-3\8879e93d76e4dd0dd54abf55818b53ff\transformed\material-1.5.0-alpha05\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] C:\Users\82102\.gradle\caches\transforms-3\3721de789aff74f2f52f02659b18895c\transformed\constraintlayout-2.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.naver.maps:map-sdk:3.12.0] C:\Users\82102\.gradle\caches\transforms-3\56f5255eba218b9c9460453aa38a9187\transformed\jetified-map-sdk-3.12.0\AndroidManifest.xml:2:1-38:12
@@ -53,20 +53,20 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\84046498be48793439a4476136a93af1\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\82102\.gradle\caches\transforms-3\9ccd4574ebca9c86103f7bd859ba1dfd\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.3] C:\Users\82102\.gradle\caches\transforms-3\0c410204dc3f4dfdf9df256c96395ddb\transformed\jetified-relinker-1.4.3\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-41:12
 	package
 		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
+		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-39:12
+		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:2:11-69
@@ -91,7 +91,7 @@ ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\Andr
 	android:name
 		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:9:22-78
 application
-ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:12:5-37:19
+ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:12:5-39:19
 MERGED from [com.google.android.material:material:1.5.0-alpha05] C:\Users\82102\.gradle\caches\transforms-3\8879e93d76e4dd0dd54abf55818b53ff\transformed\material-1.5.0-alpha05\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.5.0-alpha05] C:\Users\82102\.gradle\caches\transforms-3\8879e93d76e4dd0dd54abf55818b53ff\transformed\material-1.5.0-alpha05\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] C:\Users\82102\.gradle\caches\transforms-3\3721de789aff74f2f52f02659b18895c\transformed\constraintlayout-2.1.1\AndroidManifest.xml:9:5-20
@@ -150,6 +150,10 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:34:17-77
 	android:name
 		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:34:27-74
+activity#com.example.mylittledoctor.MapInfoActivity
+ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:38:9-52
+	android:name
+		ADDED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml:38:19-50
 uses-sdk
 INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\82102\AndroidStudioProjects\Mylittledoctor\app\src\main\AndroidManifest.xml
