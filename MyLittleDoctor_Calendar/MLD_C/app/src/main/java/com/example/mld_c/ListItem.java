@@ -5,6 +5,8 @@ public class ListItem {
     private String title;
     private String sub;
 
+    boolean mor, lun, din;
+
     public String getTitle() {
         return title;
     }
