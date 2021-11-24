@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mylittledoctor">
+    <!-- 인터넷, 위치 권한 설정 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyLittleDoctor"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MainUI.Emergency$AirwayObstructionPDF"
+            android:exported="true" />
+        <activity
+            android:name=".Encyclopedia.AirwayObstruction"
+            android:exported="true" />
+        <activity
+            android:name=".MainUI.Emergency$FirstAidForEachSituationPDF"
+            android:exported="true" />
+        <activity
+            android:name=".MainUI.Emergency$ChildrenCprPDF"
+            android:exported="true" />
+        <activity
+            android:name=".MainUI.Emergency$CprPDF"
+            android:exported="true" />
+        <activity
+            android:name=".Encyclopedia.buttonpdfview"
+            android:exported="true" /> <!-- 클라이언트 아이디 입력 -->
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="7thw2iydlz" />
+
+        <activity
+            android:name=".MainUI.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainUI.Splash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainUI.Healthy_Knowledge"
+            android:exported="true" />
+        <activity
+            android:name=".MainUI.Emergency"
+            android:exported="true" />
+        <activity
+            android:name=".Calendar.CalendarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Calendar.add_dosing_list"
+            android:exported="true" />
+        <activity
+            android:name=".Calendar.PopupActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".Encyclopedia.EncyclopediaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Encyclopedia.News"
+            android:exported="true" />
+        <activity
+            android:name=".Encyclopedia.PDFOpener"
+            android:exported="true" />
+        <activity
+            android:name=".Encyclopedia.SideEffect"
+            android:exported="true" />
+        <activity
+            android:name=".HospitalMap.HospitalMapActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HospitalMap.HospitalInfoActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
