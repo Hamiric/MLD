@@ -1,5 +1,7 @@
 package com.example.mylittledoctor.Calendar;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -14,8 +16,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.Objects;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class DeviceBootReceiver extends BroadcastReceiver {
     @Override

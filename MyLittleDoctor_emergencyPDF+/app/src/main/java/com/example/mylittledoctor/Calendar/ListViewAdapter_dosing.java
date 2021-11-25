@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.mylittledoctor.Calendar.ListItem_dosing;
 import com.example.mylittledoctor.R;
 
 import java.util.ArrayList;

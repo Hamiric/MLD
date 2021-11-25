@@ -1,15 +1,8 @@
 package com.example.mylittledoctor.Calendar;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TimePicker;
-
 import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
@@ -19,23 +12,19 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TimePicker;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Toast;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Locale;
-
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import com.example.mylittledoctor.R;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class AlramActivity extends AppCompatActivity {
 
@@ -51,6 +40,13 @@ public class AlramActivity extends AppCompatActivity {
     private ListView listView;
     private ListViewAdapter_alram adapter;
 
+    // notification channel에 대한 id 생성
+    private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
+    // Channel을 생성 및 전달해 줄 수 있는 Manager 생성
+    private NotificationManager mNotificationManager;
+    // Notification에 대한 ID 생성
+    private static final int NOTIFICATION_ID = 999;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,28 +58,30 @@ public class AlramActivity extends AppCompatActivity {
         adapter = new ListViewAdapter_alram(AlramActivity.this);
         listView.setAdapter(adapter);
 
-        // 앞서 설정한 값으로 보여주기
-        // 없으면 디폴트 값은 현재시간
-        SharedPreferences sharedPreferences = getSharedPreferences("setting", MODE_PRIVATE);
 
         //long millis = sharedPreferences.getLong("nextNotifyTime", Calendar.getInstance().getTimeInMillis());
         //Calendar nextNotifyTime = new GregorianCalendar();
         //nextNotifyTime.setTimeInMillis(millis);
 
-        m_hour_24 = sharedPreferences.getInt("m_hour_24", 8);
-        m_hour = sharedPreferences.getInt("m_hour", 8);
-        m_min = sharedPreferences.getInt("m_min", 30);
-        l_hour_24 = sharedPreferences.getInt("m_hour_24", 12);
-        l_hour = sharedPreferences.getInt("m_hour", 12);
-        l_min = sharedPreferences.getInt("m_min", 30);
-        d_hour_24 = sharedPreferences.getInt("m_hour_24", 18);
-        d_hour = sharedPreferences.getInt("m_hour", 6);
-        d_min = sharedPreferences.getInt("m_min", 30);
+        // 앞서 설정한 값으로 보여주기
+        // 없으면 디폴트 값은 현재시간
+        SharedPreferences sharedPreferences = getSharedPreferences("setting", MODE_PRIVATE);
 
         ImageButton finish = (ImageButton) findViewById(R.id.imageButton3);
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                m_hour_24 = sharedPreferences.getInt("m_hour_24", 8);
+                m_hour = sharedPreferences.getInt("m_hour", 8);
+                m_min = sharedPreferences.getInt("m_min", 30);
+                l_hour_24 = sharedPreferences.getInt("l_hour_24", 12);
+                l_hour = sharedPreferences.getInt("l_hour", 12);
+                l_min = sharedPreferences.getInt("l_min", 30);
+                d_hour_24 = sharedPreferences.getInt("d_hour_24", 18);
+                d_hour = sharedPreferences.getInt("d_hour", 6);
+                d_min = sharedPreferences.getInt("d_min", 30);
+
                 Calendar mcalendar = Calendar.getInstance();
                 mcalendar.setTimeInMillis(System.currentTimeMillis());
                 mcalendar.set(Calendar.HOUR_OF_DAY, m_hour_24);
@@ -129,15 +127,21 @@ public class AlramActivity extends AppCompatActivity {
 
                  */
 
-                diaryNotification(mcalendar);
-                //diaryNotification(lcalendar);
-                //diaryNotification(dcalendar);
+                diaryNotification(mcalendar, "morning");
+                diaryNotification(lcalendar, "lunch");
+                diaryNotification(dcalendar, "dinner");
 
                 Toast.makeText(getApplicationContext(),m_hour_24 + "시 " + m_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),l_hour_24 + "시 " + l_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),d_hour_24 + "시 " + d_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
+
+                sendNotification();
 
                 finish();
             }
         });
+
+        createNotificationChannel();
 
 
         Intent intent = getIntent();
@@ -169,7 +173,7 @@ public class AlramActivity extends AppCompatActivity {
 
     }
 
-    void diaryNotification(Calendar calendar)
+    void diaryNotification(Calendar calendar, String string)
     {
 //        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 //        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -179,13 +183,13 @@ public class AlramActivity extends AppCompatActivity {
         PackageManager pm = this.getPackageManager();
         ComponentName receiver = new ComponentName(this, DeviceBootReceiver.class);
         Intent alarmIntent = new Intent(this, AlramReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, HoUtils.createID(), alarmIntent, 0);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         // 사용자가 매일 알람을 허용했다면
         if (dailyNotify) {
-
 
             if (alarmManager != null) {
 
@@ -230,4 +234,46 @@ public class AlramActivity extends AppCompatActivity {
         d_min = sharedPreferences.getInt("m_min", 30);
     }
 
+    //채널을 만드는 메소드
+    public void createNotificationChannel()
+    {
+        //notification manager 생성
+        mNotificationManager = (NotificationManager)
+                getSystemService(NOTIFICATION_SERVICE);
+        // 기기(device)의 SDK 버전 확인 ( SDK 26 버전 이상인지 - VERSION_CODES.O = 26)
+        if(Build.VERSION.SDK_INT
+                >= Build.VERSION_CODES.O){
+            //Channel 정의 생성자( construct 이용 )
+            NotificationChannel notificationChannel = new NotificationChannel(PRIMARY_CHANNEL_ID
+                    ,"Test Notification",mNotificationManager.IMPORTANCE_LOW);
+            //Channel에 대한 기본 설정
+            notificationChannel.setDescription("Notification");
+            // Manager을 이용하여 Channel 생성
+            mNotificationManager.createNotificationChannel(notificationChannel);
+        }
+    }
+
+    // Notification Builder를 만드는 메소드
+    private NotificationCompat.Builder getNotificationBuilder() {
+        SharedPreferences sharedPreferences = getSharedPreferences("setting", MODE_PRIVATE);
+        NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
+                .setContentTitle("알림 예정")
+                .setContentText(" 아침 " + Integer.toString(sharedPreferences.getInt("m_hour", 8)) + " : " + Integer.toString(sharedPreferences.getInt("m_min", 30)) +
+                                " 점심 " + Integer.toString(sharedPreferences.getInt("l_hour", 12)) + " : " + Integer.toString(sharedPreferences.getInt("l_min", 30)) +
+                                " 저녁 " + Integer.toString(sharedPreferences.getInt("d_hour", 6)) + " : " + Integer.toString(sharedPreferences.getInt("d_min", 30)))
+                .setAutoCancel(false)
+                .setSmallIcon(R.drawable.ic_launcher_foreground);
+        return notifyBuilder;
+    }
+
+    // Notification을 보내는 메소드
+    public void sendNotification(){
+        // Builder 생성
+        NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
+        // Manager를 통해 notification 디바이스로 전달
+        mNotificationManager.notify(NOTIFICATION_ID,notifyBuilder.build());
+    }
+
+
 }
+

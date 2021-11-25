@@ -19,9 +19,6 @@
             android:name=".MainUI.Emergency$AirwayObstructionPDF"
             android:exported="true" />
         <activity
-            android:name=".Encyclopedia.AirwayObstruction"
-            android:exported="true" />
-        <activity
             android:name=".MainUI.Emergency$FirstAidForEachSituationPDF"
             android:exported="true" />
         <activity
@@ -30,9 +27,7 @@
         <activity
             android:name=".MainUI.Emergency$CprPDF"
             android:exported="true" />
-        <activity
-            android:name=".Encyclopedia.buttonpdfview"
-            android:exported="true" /> <!-- 클라이언트 아이디 입력 -->
+        <!-- 클라이언트 아이디 입력 -->
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="7thw2iydlz" />

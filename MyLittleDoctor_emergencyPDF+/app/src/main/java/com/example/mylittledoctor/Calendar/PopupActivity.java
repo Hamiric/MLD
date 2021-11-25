@@ -2,6 +2,7 @@ package com.example.mylittledoctor.Calendar;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.example.mylittledoctor.R;
 public class PopupActivity extends Activity {
 
     EditText edt_title;
+    int numbering;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,9 @@ public class PopupActivity extends Activity {
         //타이틀바 없애기
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.popup_calendar_dosing_list);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("sample", MODE_PRIVATE);
+        numbering = sharedPreferences.getInt("numbering", 0);
 
         //UI 객체생성
         edt_title = (EditText)findViewById(R.id.edt_title);

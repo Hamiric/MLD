@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.mylittledoctor.Calendar.ListItem;
 import com.example.mylittledoctor.R;
 
 import java.util.ArrayList;

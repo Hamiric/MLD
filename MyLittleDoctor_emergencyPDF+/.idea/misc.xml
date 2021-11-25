@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Git directory/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/activity_airway_obstruction_pdf.xml" value="0.11367753623188406" />
+        <entry key="..\:/Git directory/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/activity_alram.xml" value="0.11367753623188406" />
+        <entry key="..\:/Git directory/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/activity_calendar_add_dosing_list.xml" value="0.11367753623188406" />
+        <entry key="..\:/Git directory/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/item_alram.xml" value="0.11367753623188406" />
+        <entry key="..\:/Git directory/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/item_calendar_alarm.xml" value="0.11367753623188406" />
+        <entry key="..\:/Git directory/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/item_calendar_dosing_list.xml" value="0.11367753623188406" />
+        <entry key="..\:/Git directory/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/popup_alram_setting.xml" value="0.11367753623188406" />
+        <entry key="..\:/Git directory/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/popup_calendar_dosing_list.xml" value="0.11367753623188406" />
         <entry key="..\:/GitBash/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/activity_alram.xml" value="0.25" />
         <entry key="..\:/GitBash/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/activity_calendar.xml" value="0.1634963768115942" />
         <entry key="..\:/GitBash/MLD/MyLittleDoctor_emergencyPDF+/app/src/main/res/layout/activity_calendar_add_dosing_list.xml" value="0.25" />
@@ -62,7 +70,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
