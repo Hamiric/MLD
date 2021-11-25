@@ -66,6 +66,20 @@
             android:exported="true"
             android:theme="@android:style/Theme.Dialog" />
         <activity
+            android:name=".Calendar.PopupAlramActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".Calendar.AlramActivity"
+            android:exported="true" />
+        <receiver android:name=".Calendar.DeviceBootReceiver"
+            android:enabled="false" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Calendar.AlramReceiver" />
+        <activity
             android:name=".Encyclopedia.EncyclopediaActivity"
             android:exported="true" />
         <activity
