@@ -34,10 +34,93 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/edt_title"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="약품명"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/autoSearchView"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:textColorHint="#555555"
+                android:completionHint="검색어를 입력하세요."
+                android:completionThreshold="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="투약량"
+                android:textColor="@color/black"
+                android:textSize="16dp"/>
+
+            <EditText
+                android:id="@+id/dosage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="횟수"
+                android:textColor="@color/black"
+                android:textSize="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1회"/>
+
+               <CheckBox
+                   android:id="@+id/dosing_number1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2회"/>
+
+                <CheckBox
+                    android:id="@+id/dosing_number2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3회"/>
+
+                <CheckBox
+                    android:id="@+id/dosing_number3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="일수"
+                android:textColor="@color/black"
+                android:textSize="16dp"/>
+
+            <EditText
+                android:id="@+id/dosing_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
 
         </LinearLayout>
 

@@ -139,7 +139,6 @@
                     android:background="@drawable/all_item_object"
                     android:orientation="horizontal">
 
-
                     <TextView
                         android:id="@+id/list_title"
                         android:layout_width="0dp"

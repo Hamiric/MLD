@@ -49,7 +49,7 @@
                 android:layout_marginTop="6dp"
                 android:layout_marginLeft="12dp"
                 android:textSize="16dp"
-                android:text="함량 :  / 투약량 :  "/>
+                android:text="투약량 :  "/>
 
             <TextView
                 android:id="@+id/txt_sub3"
@@ -59,7 +59,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="12dp"
                 android:textSize="16dp"
-                android:text="1일투약횟수 :  / 총투약횟수 :  "/>
+                android:text="횟수 :  / 일수 :  "/>
 
 
             

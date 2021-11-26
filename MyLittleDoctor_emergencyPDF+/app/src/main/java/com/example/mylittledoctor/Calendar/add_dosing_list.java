@@ -3,6 +3,8 @@ package com.example.mylittledoctor.Calendar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -15,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mylittledoctor.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class add_dosing_list extends AppCompatActivity {
 
@@ -27,6 +30,10 @@ public class add_dosing_list extends AppCompatActivity {
     private LinearLayout alram;
 
     ArrayList<String> title = new ArrayList<String>();
+    ArrayList<String> ar_dosage = new ArrayList<String>();
+    ArrayList<String> ar_dosing_days = new ArrayList<String>();
+    ArrayList<Integer> ar_dosing_number = new ArrayList<Integer>();
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,13 +49,22 @@ public class add_dosing_list extends AppCompatActivity {
         adapter = new ListViewAdapter_dosing(add_dosing_list.this);
         listView.setAdapter(adapter);
 
+
         alram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AlramActivity.class);
+                intent.putStringArrayListExtra("title", title);
+                intent.putStringArrayListExtra("dosage", ar_dosage);
+                intent.putStringArrayListExtra("dosing_days", ar_dosing_days);
+                intent.putIntegerArrayListExtra("dosing_number",ar_dosing_number);
+
+                /*
                 for(int i = 0 ; i < title.size() ; i ++) {
                     intent.putStringArrayListExtra("title", title);
                 }
+                */
+
                 setResult(RESULT_OK, intent);
                 startActivity(intent);
             }
@@ -76,8 +92,21 @@ public class add_dosing_list extends AppCompatActivity {
         if(requestCode==1){
             if(resultCode==RESULT_OK){
                 //데이터 받기
-                title.add(data.getStringExtra("title"));
-                adapter.addItem(data.getStringExtra("title"));
+                String S_title = data.getStringExtra("title");
+                String dosage = data.getStringExtra("dosage");
+                String dosing_days = data.getStringExtra("dosing_days");
+                int dosing_number = data.getIntExtra("dosing_number",0);
+
+                //데이터 가공
+                String indiredient = "주성분";
+                String s_sub2 = "투약량 : " + dosage;
+                String s_sub3 = "횟수 : " + dosing_number + "  /  일수 : " + dosing_days;
+
+                title.add(S_title);
+                ar_dosage.add(dosage);
+                ar_dosing_days.add(dosing_days);
+                ar_dosing_number.add(dosing_number);
+                adapter.addItem(S_title,indiredient,s_sub2,s_sub3);
 
                 adding_request.setVisibility(View.GONE);
 
@@ -86,5 +115,7 @@ public class add_dosing_list extends AppCompatActivity {
         }
 
     }
+
+
 
 }

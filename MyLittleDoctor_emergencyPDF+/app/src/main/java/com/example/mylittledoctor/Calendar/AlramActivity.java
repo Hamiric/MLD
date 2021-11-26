@@ -36,6 +36,9 @@ public class AlramActivity extends AppCompatActivity {
     String m_am_pm, l_am_pm, d_am_pm;
 
     ArrayList<String> title = new ArrayList<String>();
+    ArrayList<String> ar_dosage = new ArrayList<String>();
+    ArrayList<String> ar_dosing_days = new ArrayList<String>();
+    ArrayList<Integer> ar_dosing_number = new ArrayList<Integer>();
 
     private ListView listView;
     private ListViewAdapter_alram adapter;
@@ -143,14 +146,15 @@ public class AlramActivity extends AppCompatActivity {
 
         createNotificationChannel();
 
-
         Intent intent = getIntent();
         title = intent.getStringArrayListExtra("title");
+        ar_dosage = intent.getStringArrayListExtra("dosage");
+        ar_dosing_days = intent.getStringArrayListExtra("dosing_days");
+        ar_dosing_number = intent.getIntegerArrayListExtra("dosing_number");
 
         for(int i = 0 ; i < title.size() ; i ++){
-            adapter.addItem(title.get(i));
+            adapter.addItem(title.get(i),ar_dosing_number.get(i));
         }
-
 
 
         ImageButton option = (ImageButton) findViewById(R.id.option);

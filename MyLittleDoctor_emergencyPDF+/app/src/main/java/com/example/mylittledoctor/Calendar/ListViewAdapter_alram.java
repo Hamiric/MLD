@@ -94,13 +94,30 @@ public class ListViewAdapter_alram extends BaseAdapter {
             }
         });
 
+        if(listItem.getNumber() == 1){
+            morning.setText("아침");
+            lunch.setText("선택됨");
+            dinner.setText("저녁");
+        }
+        else if(listItem.getNumber() == 2){
+            morning.setText("선택됨");
+            lunch.setText("점심");
+            dinner.setText("선택됨");
+        }
+        else if(listItem.getNumber() == 3){
+            morning.setText("선택됨");
+            lunch.setText("선택됨");
+            dinner.setText("선택됨");
+        }
+
         return convertView;
     }
 
-    public void addItem(String title){
+    public void addItem(String title, int number){
         ListItem_dosing listItem = new ListItem_dosing();
 
         listItem.setTitle(title);
+        listItem.setNumber(number);
 
         listItems.add(listItem);
     }

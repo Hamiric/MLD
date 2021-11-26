@@ -17,6 +17,7 @@ public class ListViewAdapter_dosing extends BaseAdapter {
     private ArrayList<ListItem_dosing> listItems = new ArrayList<ListItem_dosing>();
 
     private TextView drag_title;
+    private TextView indiredient, dosage, dosing_number_days;
 
 
     public ListViewAdapter_dosing(Context context){
@@ -49,19 +50,28 @@ public class ListViewAdapter_dosing extends BaseAdapter {
 
         // item.xml 의 참조 획득
         drag_title = (TextView)convertView.findViewById(R.id.drag_title);
+        indiredient = (TextView)convertView.findViewById(R.id.txt_sub);
+        dosage = (TextView)convertView.findViewById(R.id.txt_sub2);
+        dosing_number_days = (TextView)convertView.findViewById(R.id.txt_sub3);
 
         ListItem_dosing listItem = listItems.get(position);
 
         // 가져온 데이터를 텍스트뷰에 입력
         drag_title.setText(listItem.getTitle());
+        indiredient.setText(listItem.getSub());
+        dosage.setText(listItem.getSub2());
+        dosing_number_days.setText(listItem.getSub3());
 
         return convertView;
     }
 
-    public void addItem(String title){
+    public void addItem(String s_title, String indiredient, String s_sub2, String s_sub3){
         ListItem_dosing listItem = new ListItem_dosing();
 
-        listItem.setTitle(title);
+        listItem.setTitle(s_title);
+        listItem.setSub(indiredient);
+        listItem.setSub2(s_sub2);
+        listItem.setSub3(s_sub3);
 
         listItems.add(listItem);
     }

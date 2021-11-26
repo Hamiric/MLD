@@ -4,17 +4,31 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.AutoCompleteTextView;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mylittledoctor.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PopupActivity extends Activity {
 
-    EditText edt_title;
+    AutoCompleteTextView autoSearchView;
     int numbering;
+
+    private List<String> list;
+
+    CheckBox dosing_number1, dosing_number2, dosing_number3;
+    EditText dosage, dosing_days;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +40,54 @@ public class PopupActivity extends Activity {
         SharedPreferences sharedPreferences = getSharedPreferences("sample", MODE_PRIVATE);
         numbering = sharedPreferences.getInt("numbering", 0);
 
+        list = new ArrayList<String>();
+        settingList();
+
         //UI 객체생성
-        edt_title = (EditText)findViewById(R.id.edt_title);
+        autoSearchView = (AutoCompleteTextView) findViewById(R.id.autoSearchView);
+        autoSearchView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, list));
+
+        dosage = (EditText) findViewById(R.id.dosage);
+        dosing_days = (EditText) findViewById(R.id.dosing_days);
+
+        dosing_number1 = (CheckBox) findViewById(R.id.dosing_number1);
+        dosing_number2 = (CheckBox) findViewById(R.id.dosing_number2);
+        dosing_number3 = (CheckBox) findViewById(R.id.dosing_number3);
+
+        dosing_number1.setOnClickListener(new CheckBox.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                dosing_number2.setChecked(false);
+                dosing_number3.setChecked(false);
+            }
+        });
+
+        dosing_number2.setOnClickListener(new CheckBox.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                dosing_number1.setChecked(false);
+                dosing_number3.setChecked(false);
+            }
+        });
+
+        dosing_number3.setOnClickListener(new CheckBox.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                dosing_number1.setChecked(false);
+                dosing_number2.setChecked(false);
+            }
+        });
     }
 
     //확인 버튼 클릭
     public void mOnClose(View v){
         //데이터 전달하기
         Intent intent = new Intent();
-        intent.putExtra("title", edt_title.getText().toString());
+        intent.putExtra("title", ((EditText)autoSearchView).getText().toString());
+        intent.putExtra("dosage",dosage.getText().toString());
+        intent.putExtra("dosing_days",dosing_days.getText().toString());
+        intent.putExtra("dosing_number",checking(dosing_number1,dosing_number2,dosing_number3));
+
         setResult(RESULT_OK, intent);
 
         //액티비티(팝업) 닫기
@@ -55,4 +108,27 @@ public class PopupActivity extends Activity {
         //안드로이드 백버튼 막기
         return;
     }
+
+    private void settingList(){
+        list.add("채수빈");
+        list.add("박지현");
+        list.add("수지");
+    }
+
+    private int checking(CheckBox a, CheckBox b, CheckBox c){
+        if(a.isChecked()){
+            return 1;
+        }
+
+        if(b.isChecked()){
+            return 2;
+        }
+
+        if(c.isChecked()){
+            return 3;
+        }
+
+        return 0;
+    }
+
 }

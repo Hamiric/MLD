@@ -47,14 +47,13 @@ public class ListViewAdapter extends BaseAdapter {
 
         // item.xml 의 참조 획득
         TextView txt_title = (TextView)convertView.findViewById(R.id.txt_title);
-        TextView txt_sub = (TextView)convertView.findViewById(R.id.txt_sub);
         //Button btn_delete = (Button)convertView.findViewById(R.id.btn_delete);
 
         ListItem listItem = listItems.get(position);
 
         // 가져온 데이터를 텍스트뷰에 입력
         txt_title.setText(listItem.getTitle());
-        txt_sub.setText(listItem.getSub());
+
 
         /*
         // 리스트 아이템 삭제
@@ -77,11 +76,10 @@ public class ListViewAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void addItem(String title, String sub){
+    public void addItem(String title){
         ListItem listItem = new ListItem();
 
         listItem.setTitle(title);
-        listItem.setSub(sub);
 
         listItems.add(listItem);
     }
