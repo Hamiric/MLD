@@ -30,6 +30,10 @@ public class PopupActivity extends Activity {
     CheckBox dosing_number1, dosing_number2, dosing_number3;
     EditText dosage, dosing_days;
 
+    private int Year, Month, Day;
+
+    DBHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +46,12 @@ public class PopupActivity extends Activity {
 
         list = new ArrayList<String>();
         settingList();
+
+        dbHelper = new DBHelper(getApplicationContext(), 1);
+
+        Year = getIntent().getIntExtra("Year", 0000);
+        Month = getIntent().getIntExtra("Month", 00);
+        Day = getIntent().getIntExtra("Day", 00);
 
         //UI 객체생성
         autoSearchView = (AutoCompleteTextView) findViewById(R.id.autoSearchView);
@@ -84,9 +94,13 @@ public class PopupActivity extends Activity {
         //데이터 전달하기
         Intent intent = new Intent();
         intent.putExtra("title", ((EditText)autoSearchView).getText().toString());
-        intent.putExtra("dosage",dosage.getText().toString());
-        intent.putExtra("dosing_days",dosing_days.getText().toString());
+        intent.putExtra("dosage",Integer.parseInt(dosage.getText().toString()));
+        intent.putExtra("dosing_days",Integer.parseInt(dosing_days.getText().toString()));
         intent.putExtra("dosing_number",checking(dosing_number1,dosing_number2,dosing_number3));
+
+        String indiredient = "주성분";
+
+        dbHelper.insert(((EditText)autoSearchView).getText().toString(), indiredient,Integer.parseInt(dosage.getText().toString()), Integer.parseInt(dosing_days.getText().toString()), checking(dosing_number1,dosing_number2,dosing_number3), Year, Month, Day);
 
         setResult(RESULT_OK, intent);
 

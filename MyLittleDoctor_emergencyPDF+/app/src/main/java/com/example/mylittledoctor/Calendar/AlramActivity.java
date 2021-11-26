@@ -9,12 +9,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -36,12 +40,18 @@ public class AlramActivity extends AppCompatActivity {
     String m_am_pm, l_am_pm, d_am_pm;
 
     ArrayList<String> title = new ArrayList<String>();
-    ArrayList<String> ar_dosage = new ArrayList<String>();
-    ArrayList<String> ar_dosing_days = new ArrayList<String>();
+    ArrayList<Integer> ar_dosage = new ArrayList<Integer>();
+    ArrayList<Integer> ar_dosing_days = new ArrayList<Integer>();
     ArrayList<Integer> ar_dosing_number = new ArrayList<Integer>();
+
+    DBHelper dbHelper;
+
+    private int Year, Month, Day;
 
     private ListView listView;
     private ListViewAdapter_alram adapter;
+
+    private TextView list_day;
 
     // notification channel에 대한 id 생성
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
@@ -55,12 +65,21 @@ public class AlramActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alram);
 
-        dosing_list = (LinearLayout) findViewById(R.id.alram_setting);
+        dosing_list = (LinearLayout) findViewById(R.id.dosing_list);
         listView = (ListView) findViewById(R.id.listview_item_dosing);
 
         adapter = new ListViewAdapter_alram(AlramActivity.this);
         listView.setAdapter(adapter);
 
+        list_day = (TextView) findViewById(R.id.list_day);
+
+        dbHelper = new DBHelper(getApplicationContext(), 1);
+
+        Year = getIntent().getIntExtra("Year", 0000);
+        Month = getIntent().getIntExtra("Month", 00);
+        Day = getIntent().getIntExtra("Day", 00);
+
+        list_day.setText(Year + " / " + Month + " / " + Day);
 
         //long millis = sharedPreferences.getLong("nextNotifyTime", Calendar.getInstance().getTimeInMillis());
         //Calendar nextNotifyTime = new GregorianCalendar();
@@ -146,10 +165,30 @@ public class AlramActivity extends AppCompatActivity {
 
         createNotificationChannel();
 
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Medicine", null);
+
+        while(cursor.moveToNext()){
+            if(Year == cursor.getInt(5)){
+                if(Month == cursor.getInt(6)){
+                    if(Day == cursor.getInt(7)){
+
+                        String S_title = cursor.getString(0);
+                        int dosage = cursor.getInt(2);
+                        int dosing_number = cursor.getInt(3);
+                        int dosing_days = cursor.getInt(4);
+
+                        adapter.addItem(S_title,dosing_number);
+                    }
+                }
+            }
+        }
+
+
         Intent intent = getIntent();
         title = intent.getStringArrayListExtra("title");
-        ar_dosage = intent.getStringArrayListExtra("dosage");
-        ar_dosing_days = intent.getStringArrayListExtra("dosing_days");
+        ar_dosage = intent.getIntegerArrayListExtra("dosage");
+        ar_dosing_days = intent.getIntegerArrayListExtra("dosing_days");
         ar_dosing_number = intent.getIntegerArrayListExtra("dosing_number");
 
         for(int i = 0 ; i < title.size() ; i ++){
@@ -171,7 +210,12 @@ public class AlramActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), add_dosing_list.class);
+                intent.putExtra("Year", Year);
+                intent.putExtra("Month", Month);
+                intent.putExtra("Day", Day);
                 startActivity(intent);
+
+                finish();
             }
         });
 

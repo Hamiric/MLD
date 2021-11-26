@@ -1,11 +1,15 @@
 package com.example.mylittledoctor.Calendar;
 
+import static java.sql.Types.NULL;
+
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +19,8 @@ import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.Calendar;
 
@@ -29,6 +35,8 @@ public class CalendarActivity extends AppCompatActivity
     private ListViewAdapter adapter;
 
     private Button btn_add;
+
+    DBHelper dbHelper;
 
     private int Year, Month, Day;
 
@@ -48,6 +56,8 @@ public class CalendarActivity extends AppCompatActivity
         adapter = new ListViewAdapter(CalendarActivity.this);
         listView.setAdapter(adapter);
 
+        dbHelper = new DBHelper(getApplicationContext(), 1);
+
         materialCalendarView.state().edit()
                 .setFirstDayOfWeek(Calendar.SUNDAY)
                 .setMinimumDate(CalendarDay.from(2017, 0, 1))
@@ -65,21 +75,64 @@ public class CalendarActivity extends AppCompatActivity
             @Override
             public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
                 Year = date.getYear();
-                Month = date.getMonth();
+                Month = date.getMonth() + 1;
                 Day = date.getDay();
 
                 SelectDay_textview.setVisibility(View.VISIBLE);
-                SelectDay_textview.setText(String.format("%d" + "월 " + "%d" + "일", Month + 1, Day));
+                SelectDay_textview.setText(String.format("%d" + "월 " + "%d" + "일", Month, Day));
+
+                adapter.clear();
+
+                SQLiteDatabase db = dbHelper.getReadableDatabase();
+                Cursor cursor = db.rawQuery("SELECT * FROM Medicine", null);
+
+                while(cursor.moveToNext()){
+                    if(Year == cursor.getInt(5)){
+                        if(Month == cursor.getInt(6)){
+                            if(Day == cursor.getInt(7)){
+
+                                String S_title = cursor.getString(0);
+                                int dosage = cursor.getInt(2);
+                                int dosing_number = cursor.getInt(3);
+                                int dosing_days = cursor.getInt(4);
+
+                                String indiredient = "주성분";
+                                String s_sub2 = "투약량 : " + dosage;
+                                String s_sub3 = "횟수 : " + dosing_number + "  /  일수 : " + dosing_days;
+
+                                adapter.addItem(S_title, indiredient, s_sub2, s_sub3);
+                            }
+                        }
+                    }
+                }
+
+                adapter.notifyDataSetChanged();
             }
         });
 
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), add_dosing_list.class);
-                startActivity(intent);
+                if(Year == NULL){
+                    Toast.makeText(getApplicationContext(), "날짜를 선택해 주세요", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent = new Intent(getApplicationContext(), add_dosing_list.class);
+                    intent.putExtra("Year", Year);
+                    intent.putExtra("Month", Month);
+                    intent.putExtra("Day", Day);
+                    startActivity(intent);
+                }
             }
         });
 
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+    }
+
 }

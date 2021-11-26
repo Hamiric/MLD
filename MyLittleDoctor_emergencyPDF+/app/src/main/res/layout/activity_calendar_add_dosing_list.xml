@@ -37,7 +37,7 @@
             app:layout_constraintHorizontal_bias="0.022"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/all_backbtnimg" />
+             />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -140,7 +140,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/list_title"
+                        android:id="@+id/list_day"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="4"
@@ -189,11 +189,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
-
                     </LinearLayout>
 
                 </LinearLayout>
-
 
             </LinearLayout>
 

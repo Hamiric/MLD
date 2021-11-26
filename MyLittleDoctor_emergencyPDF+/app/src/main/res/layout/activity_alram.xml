@@ -37,7 +37,7 @@
             app:layout_constraintHorizontal_bias="0.022"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/all_backbtnimg" />
+             />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -66,7 +66,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/drag_record"
+                android:id="@+id/dosing_list"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -136,7 +136,7 @@
                     app:srcCompat="@drawable/all_option_image" />
 
                 <TextView
-                    android:id="@+id/list_title"
+                    android:id="@+id/list_day"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
