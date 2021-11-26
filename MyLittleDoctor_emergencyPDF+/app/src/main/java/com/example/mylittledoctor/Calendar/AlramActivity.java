@@ -175,8 +175,8 @@ public class AlramActivity extends AppCompatActivity {
 
                         String S_title = cursor.getString(0);
                         int dosage = cursor.getInt(2);
-                        int dosing_number = cursor.getInt(3);
-                        int dosing_days = cursor.getInt(4);
+                        int dosing_number = cursor.getInt(4);
+                        int dosing_days = cursor.getInt(3);
 
                         adapter.addItem(S_title,dosing_number);
                     }
@@ -184,7 +184,7 @@ public class AlramActivity extends AppCompatActivity {
             }
         }
 
-
+        /*
         Intent intent = getIntent();
         title = intent.getStringArrayListExtra("title");
         ar_dosage = intent.getIntegerArrayListExtra("dosage");
@@ -194,7 +194,7 @@ public class AlramActivity extends AppCompatActivity {
         for(int i = 0 ; i < title.size() ; i ++){
             adapter.addItem(title.get(i),ar_dosing_number.get(i));
         }
-
+         */
 
         ImageButton option = (ImageButton) findViewById(R.id.option);
         option.setOnClickListener(new View.OnClickListener() {

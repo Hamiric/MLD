@@ -74,8 +74,8 @@ public class add_dosing_list extends AppCompatActivity {
 
                         String S_title = cursor.getString(0);
                         int dosage = cursor.getInt(2);
-                        int dosing_number = cursor.getInt(3);
-                        int dosing_days = cursor.getInt(4);
+                        int dosing_number = cursor.getInt(4);
+                        int dosing_days = cursor.getInt(3);
 
                         String indiredient = "주성분";
                         String s_sub2 = "투약량 : " + dosage;
