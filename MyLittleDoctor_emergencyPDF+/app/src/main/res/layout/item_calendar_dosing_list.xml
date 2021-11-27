@@ -18,9 +18,10 @@
         android:orientation="horizontal" >
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_weight="5">
 
             <TextView
                 android:id="@+id/drag_title"
@@ -61,9 +62,15 @@
                 android:textSize="16dp"
                 android:text="횟수 :  / 일수 :  "/>
 
-
             
         </LinearLayout>
+
+        <Button
+            android:id="@+id/delete_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="X"/>
 
     </LinearLayout>
 

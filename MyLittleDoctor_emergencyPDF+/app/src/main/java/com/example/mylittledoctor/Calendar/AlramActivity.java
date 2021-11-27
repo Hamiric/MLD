@@ -323,6 +323,5 @@ public class AlramActivity extends AppCompatActivity {
         mNotificationManager.notify(NOTIFICATION_ID,notifyBuilder.build());
     }
 
-
 }
 

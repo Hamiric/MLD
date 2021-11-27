@@ -49,7 +49,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Person Table 삭제
     public void Delete(String name, int year, int month, int day) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DELETE Medicine WHERE NAME = '" + name + "' AND Year = " + year + " AND Month = " + month + " AND Day = " + day +" ");
+        db.execSQL("DELETE FROM Medicine WHERE NAME = '" + name + "' AND Year = " + year + " AND Month = " + month + " AND Day = " + day +"");
         db.close();
     }
 

@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mylittledoctor.R;
 
@@ -19,6 +21,11 @@ public class ListViewAdapter_dosing extends BaseAdapter {
     private TextView drag_title;
     private TextView indiredient, dosage, dosing_number_days;
 
+    private int Year, Month, Day;
+
+    private Button btn_delete;
+
+    DBHelper dbHelper;
 
     public ListViewAdapter_dosing(Context context){
         this.mContext = context;
@@ -53,8 +60,15 @@ public class ListViewAdapter_dosing extends BaseAdapter {
         indiredient = (TextView)convertView.findViewById(R.id.txt_sub);
         dosage = (TextView)convertView.findViewById(R.id.txt_sub2);
         dosing_number_days = (TextView)convertView.findViewById(R.id.txt_sub3);
+        btn_delete = (Button)convertView.findViewById(R.id.delete_btn);
 
         ListItem_dosing listItem = listItems.get(position);
+
+        dbHelper = new DBHelper(mContext.getApplicationContext(), 1);
+
+        Year = listItem.getYear();
+        Month = listItem.getMonth();
+        Day = listItem.getDay();
 
         // 가져온 데이터를 텍스트뷰에 입력
         drag_title.setText(listItem.getTitle());
@@ -62,16 +76,32 @@ public class ListViewAdapter_dosing extends BaseAdapter {
         dosage.setText(listItem.getSub2());
         dosing_number_days.setText(listItem.getSub3());
 
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listItems.remove(position);
+
+                Toast.makeText(mContext.getApplicationContext(), listItem.getTitle() + " 기록이 삭제되었습니다.", Toast.LENGTH_LONG).show();
+
+                dbHelper.Delete(listItem.getTitle(), Year, Month, Day);
+
+                notifyDataSetChanged();
+            }
+        });
+
         return convertView;
     }
 
-    public void addItem(String s_title, String indiredient, String s_sub2, String s_sub3){
+    public void addItem(String s_title, String indiredient, String s_sub2, String s_sub3, int Year, int Month, int Day){
         ListItem_dosing listItem = new ListItem_dosing();
 
         listItem.setTitle(s_title);
         listItem.setSub(indiredient);
         listItem.setSub2(s_sub2);
         listItem.setSub3(s_sub3);
+        listItem.setYear(Year);
+        listItem.setMonth(Month);
+        listItem.setDay(Day);
 
         listItems.add(listItem);
     }

@@ -81,7 +81,7 @@ public class add_dosing_list extends AppCompatActivity {
                         String s_sub2 = "투약량 : " + dosage;
                         String s_sub3 = "횟수 : " + dosing_number + "  /  일수 : " + dosing_days;
 
-                        adapter.addItem(S_title,indiredient,s_sub2,s_sub3);
+                        adapter.addItem(S_title,indiredient,s_sub2,s_sub3, Year, Month, Day);
 
                         adding_request.setVisibility(View.GONE);
                     }
@@ -148,7 +148,7 @@ public class add_dosing_list extends AppCompatActivity {
                 ar_dosage.add(dosage);
                 ar_dosing_days.add(dosing_days);
                 ar_dosing_number.add(dosing_number);
-                adapter.addItem(S_title,indiredient,s_sub2,s_sub3);
+                adapter.addItem(S_title,indiredient,s_sub2,s_sub3, Year, Month, Day);
 
                 adding_request.setVisibility(View.GONE);
 
