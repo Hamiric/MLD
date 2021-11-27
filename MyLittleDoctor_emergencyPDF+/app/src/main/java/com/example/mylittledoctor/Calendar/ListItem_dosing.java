@@ -4,7 +4,7 @@ public class ListItem_dosing {
 
     private String title;
     private String sub, sub2, sub3;
-    private int number;
+    private int number, Year, Month, Day;
 
 
     public String getTitle() {
@@ -37,6 +37,30 @@ public class ListItem_dosing {
 
     public void setSub3(String sub3) {
         this.sub3 = sub3;
+    }
+
+    public int getYear() {
+        return Year;
+    }
+
+    public void setYear(int Year) {
+        this.Year = Year;
+    }
+
+    public int getMonth() {
+        return Month;
+    }
+
+    public void setMonth(int Month) {
+        this.Month = Month;
+    }
+
+    public int getDay() {
+        return Day;
+    }
+
+    public void setDay(int Day) {
+        this.Day = Day;
     }
 
     public int getNumber() {

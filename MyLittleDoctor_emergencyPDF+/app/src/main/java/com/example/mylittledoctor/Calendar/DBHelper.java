@@ -16,7 +16,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Person Tabel 생성
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE Medicine(name TEXT, indiredient TEXT, Dosage INT, Dosing_number INT, Dosing_days INT, Year INT, Month INT, Day INT)");
+        db.execSQL("CREATE TABLE Medicine(name TEXT, indiredient TEXT, Dosage INT, Dosing_number INT, Dosing_days INT, Year INT, Month INT, Day INT, STATUS INT)");
     }
 
     // Person Table Upgrade
@@ -26,11 +26,10 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
     // Person Table 입력
-    public void insert(String name, String indiredient, int dosage, int dosing_number, int dosing_days, int year, int month, int day) {
+    public void insert(String name, String indiredient, int dosage, int dosing_number, int dosing_days, int year, int month, int day, int status) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT INTO Medicine VALUES('" + name + "', '" + indiredient + "', " + dosage + ", " + dosing_number + ", " + dosing_days + ", " + year + ", " + month + ", " + day + ")");
+        db.execSQL("INSERT INTO Medicine VALUES('" + name + "', '" + indiredient + "', " + dosage + ", " + dosing_number + ", " + dosing_days + ", " + year + ", " + month + ", " + day + ", " + status +")");
         db.close();
     }
 
@@ -38,6 +37,12 @@ public class DBHelper extends SQLiteOpenHelper {
     public void Update(String name, int dosage, int dosing_number, int dosing_days, int year, int month, int day) {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("UPDATE Medicine SET Dosage = " + dosage + ", Dosing_number = " + dosing_number + ", Dosing_days = " + dosing_days + "" + " WHERE NAME = '" + name + "' AND Year = " + year + " AND Month = " + month + " AND Day = " + day + "");
+        db.close();
+    }
+
+    public void Update(String name, int year, int month, int day, int status) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("UPDATE Medicine SET STATUS = " + status + "" + " WHERE NAME = '" + name + "' AND Year = " + year + " AND Month = " + month + " AND Day = " + day + "");
         db.close();
     }
 

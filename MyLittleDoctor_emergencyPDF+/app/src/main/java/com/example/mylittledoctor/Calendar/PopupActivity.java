@@ -100,7 +100,7 @@ public class PopupActivity extends Activity {
 
         String indiredient = "주성분";
 
-        dbHelper.insert(((EditText)autoSearchView).getText().toString(), indiredient,Integer.parseInt(dosage.getText().toString()), Integer.parseInt(dosing_days.getText().toString()), checking(dosing_number1,dosing_number2,dosing_number3), Year, Month, Day);
+        dbHelper.insert(((EditText)autoSearchView).getText().toString(), indiredient,Integer.parseInt(dosage.getText().toString()), Integer.parseInt(dosing_days.getText().toString()), checking(dosing_number1,dosing_number2,dosing_number3), Year, Month, Day, checking(dosing_number1,dosing_number2,dosing_number3));
 
         setResult(RESULT_OK, intent);
 

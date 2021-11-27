@@ -177,8 +177,9 @@ public class AlramActivity extends AppCompatActivity {
                         int dosage = cursor.getInt(2);
                         int dosing_number = cursor.getInt(4);
                         int dosing_days = cursor.getInt(3);
+                        int status = cursor.getInt(8);
 
-                        adapter.addItem(S_title,dosing_number);
+                        adapter.addItem(S_title,status, Year, Month, Day);
                     }
                 }
             }
