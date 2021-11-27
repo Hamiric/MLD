@@ -16,6 +16,12 @@
         android:theme="@style/Theme.MyLittleDoctor"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Search.SeachedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Search.SearchingActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainUI.Emergency$AirwayObstructionPDF"
             android:exported="true" />
         <activity
@@ -26,8 +32,7 @@
             android:exported="true" />
         <activity
             android:name=".MainUI.Emergency$CprPDF"
-            android:exported="true" />
-        <!-- 클라이언트 아이디 입력 -->
+            android:exported="true" /> <!-- 클라이언트 아이디 입력 -->
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="7thw2iydlz" />
@@ -67,13 +72,17 @@
         <activity
             android:name=".Calendar.AlramActivity"
             android:exported="true" />
-        <receiver android:name=".Calendar.DeviceBootReceiver"
-            android:enabled="false" android:exported="true">
+
+        <receiver
+            android:name=".Calendar.DeviceBootReceiver"
+            android:enabled="false"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
         <receiver android:name=".Calendar.AlramReceiver" />
+
         <activity
             android:name=".Encyclopedia.EncyclopediaActivity"
             android:exported="true" />

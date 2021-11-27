@@ -12,6 +12,7 @@ import com.example.mylittledoctor.Encyclopedia.EncyclopediaActivity;
 import com.example.mylittledoctor.Encyclopedia.News;
 import com.example.mylittledoctor.Encyclopedia.SideEffect;
 import com.example.mylittledoctor.R;
+import com.example.mylittledoctor.Search.SearchingActivity;
 
 public class Healthy_Knowledge extends AppCompatActivity {
     Button image_btn1, image_btn2, image_btn3, image_btn4;
@@ -40,6 +41,10 @@ public class Healthy_Knowledge extends AppCompatActivity {
                 break;
             case R.id.image_btn3:
                 intent=new Intent(Healthy_Knowledge.this, SideEffect.class);
+                startActivity(intent);
+                break;
+            case R.id.image_btn4:
+                intent=new Intent(Healthy_Knowledge.this, SearchingActivity.class);
                 startActivity(intent);
                 break;
         }
