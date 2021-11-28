@@ -21,22 +21,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="5">
+            android:layout_weight="1">
 
             <TextView
                 android:id="@+id/drag_title"
-                android:layout_width="match_parent"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="12dp"
-                android:text="의약품 이름"
-                android:textSize="24dp"
+                android:text="베실리온정(베포타스틴베실산염)"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/txt_sub"
-                android:layout_width="match_parent"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="12dp"

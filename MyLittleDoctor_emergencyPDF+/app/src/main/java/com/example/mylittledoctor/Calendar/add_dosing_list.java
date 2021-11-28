@@ -73,11 +73,12 @@ public class add_dosing_list extends AppCompatActivity {
                     if(Day == cursor.getInt(7)){
 
                         String S_title = cursor.getString(0);
+                        String indiredient = cursor.getString(1);
                         int dosage = cursor.getInt(2);
                         int dosing_number = cursor.getInt(4);
                         int dosing_days = cursor.getInt(3);
 
-                        String indiredient = "주성분";
+                        //String indiredient = "주성분";
                         String s_sub2 = "투약량 : " + dosage;
                         String s_sub3 = "횟수 : " + dosing_number + "  /  일수 : " + dosing_days;
 
@@ -135,12 +136,13 @@ public class add_dosing_list extends AppCompatActivity {
             if(resultCode==RESULT_OK){
                 //데이터 받기
                 String S_title = data.getStringExtra("title");
+                String ingredient = data.getStringExtra("ingredient");
                 int dosage = data.getIntExtra("dosage",0);
                 int dosing_days = data.getIntExtra("dosing_days",0);
                 int dosing_number = data.getIntExtra("dosing_number",0);
 
                 //데이터 가공
-                String indiredient = "주성분";
+                //String ingredient = "주성분";
                 String s_sub2 = "투약량 : " + dosage;
                 String s_sub3 = "횟수 : " + dosing_number + "  /  일수 : " + dosing_days;
 
@@ -148,7 +150,7 @@ public class add_dosing_list extends AppCompatActivity {
                 ar_dosage.add(dosage);
                 ar_dosing_days.add(dosing_days);
                 ar_dosing_number.add(dosing_number);
-                adapter.addItem(S_title,indiredient,s_sub2,s_sub3, Year, Month, Day);
+                adapter.addItem(S_title,ingredient,s_sub2,s_sub3, Year, Month, Day);
 
                 adding_request.setVisibility(View.GONE);
 
@@ -157,7 +159,5 @@ public class add_dosing_list extends AppCompatActivity {
         }
 
     }
-
-
 
 }

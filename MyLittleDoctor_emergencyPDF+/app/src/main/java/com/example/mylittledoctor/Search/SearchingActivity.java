@@ -40,14 +40,12 @@ public class SearchingActivity extends AppCompatActivity {
 
         init();
 
-
     }
     void init(){
         edt1=(EditText)findViewById(R.id.edt1);
         edt2=(EditText)findViewById(R.id.edt2);
         edt3=(EditText)findViewById(R.id.edt3);
         btn1=(Button)findViewById(R.id.btn1);
-
     }
 
     void searching(String Searching_Name){
@@ -75,7 +73,6 @@ public class SearchingActivity extends AppCompatActivity {
                                 // Toast.makeText(getApplicationContext(), "data찾음!", Toast.LENGTH_SHORT).show();
                                 // Log.d("확인",""+Searching_Name);
                             }
-
                         }
                     }else {
                         Log.d("test", "sheet 없음");
@@ -91,9 +88,6 @@ public class SearchingActivity extends AppCompatActivity {
                 Log.d("확인","에러:"+e.getMessage());
                 Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_SHORT).show();
             }
-
-
-
 
         }
     }
@@ -113,15 +107,14 @@ public class SearchingActivity extends AppCompatActivity {
             searching(Ingredient_Name);
         }else if(Medicine_Name!=null && Corporate_Name!=null && Ingredient_Name!=null){
 
-
         }else if(Medicine_Name!=null && Corporate_Name==null && Ingredient_Name!=null){
 
         }else if(Medicine_Name==null && Corporate_Name!=null && Ingredient_Name!=null){
 
         }else{
-
             //3개 모두 다 입력했을 경우.
         }
+
         if(Medicine_List.size()>=1) {
             Intent intent = new Intent(getApplicationContext(),SeachedActivity.class);
             ArrayList<String>code=new ArrayList<>();
@@ -129,6 +122,7 @@ public class SearchingActivity extends AppCompatActivity {
             ArrayList<String>ingredients=new ArrayList<>();
             ArrayList<String>e=new ArrayList<>();
             ArrayList<String>image=new ArrayList<>();
+
             for(int i=0; i<Medicine_List.size(); i++){
                 code.add(Medicine_List.get(i).Code);
                 name.add(Medicine_List.get(i).Name);
@@ -136,12 +130,14 @@ public class SearchingActivity extends AppCompatActivity {
                 e.add(Medicine_List.get(i).e);
                 image.add(Medicine_List.get(i).Image);
             }
+
             intent.putStringArrayListExtra("Code",code);
             intent.putStringArrayListExtra("Name",name);
             intent.putStringArrayListExtra("Ingredients",ingredients);
             intent.putStringArrayListExtra("E",e);
             intent.putStringArrayListExtra("Image",image);
             startActivity(intent);
+
         }else{
             Toast.makeText(getApplicationContext(),"다시입력하세요",Toast.LENGTH_SHORT).show();
         }
