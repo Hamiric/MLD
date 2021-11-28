@@ -73,15 +73,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="상세 검색"
-                    android:textColor="#55000000"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textSize="20sp"/>
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="4dp"
-                    android:background="#33000000" />
+                    android:layout_height="4dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#7FC4FD" />
 
             </LinearLayout>
 
@@ -98,21 +99,22 @@
                     android:layout_gravity="center"
                     android:text="모양 검색"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
+                    android:textColor="#55000000"
                     android:textSize="20sp" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="4dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#7FC4FD" />
+                    android:layout_height="2dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#33000000" />
 
             </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="50dp"
@@ -122,7 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv1"
-            android:text="성분 검색"
+            android:text="이름 검색"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -141,10 +143,11 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginBottom="30dp"
-            android:hint="#성분의 이름을 입력하시오"
+            android:hint="#약품 이름을 입력하시오"
             app:layout_constraintBottom_toTopOf="@id/tv2"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -159,7 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:id="@+id/edt2"
-            android:hint="#성분의 이름을 입력하시오"
+            android:hint="#업체명을 입력하시오"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toTopOf="@id/tv3"
@@ -178,7 +181,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:id="@+id/edt3"
-            android:hint="#성분의 이름을 입력하시오"
+            android:hint="#성분 이름을 입력하시오"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toTopOf="@id/btn1"
@@ -193,7 +196,7 @@
             app:layout_constraintRight_toRightOf="parent"
             android:onClick="onClick"
             android:id="@+id/btn1"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

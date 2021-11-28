@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mylittledoctor.MainUI.MainActivity;
 import com.example.mylittledoctor.R;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
@@ -35,6 +37,7 @@ public class CalendarActivity extends AppCompatActivity
     private ListViewAdapter adapter;
 
     private Button btn_add;
+    private ImageButton btn_finish;
 
     DBHelper dbHelper;
 
@@ -51,6 +54,7 @@ public class CalendarActivity extends AppCompatActivity
         materialCalendarView = (MaterialCalendarView)findViewById(R.id.calendarView);
 
         btn_add = (Button) findViewById(R.id.btn_add);
+        btn_finish = (ImageButton) findViewById(R.id.imageButton2);
         listView = (ListView) findViewById(R.id.listview);
 
         adapter = new ListViewAdapter(CalendarActivity.this);
@@ -123,6 +127,16 @@ public class CalendarActivity extends AppCompatActivity
                     intent.putExtra("Day", Day);
                     startActivity(intent);
                 }
+            }
+        });
+
+        btn_finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+
+                finish();
             }
         });
 
