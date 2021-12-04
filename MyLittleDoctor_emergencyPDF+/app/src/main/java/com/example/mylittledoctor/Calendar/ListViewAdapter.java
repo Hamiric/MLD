@@ -1,10 +1,12 @@
 package com.example.mylittledoctor.Calendar;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -70,6 +72,11 @@ public class ListViewAdapter extends BaseAdapter {
             }
         });
         */
+        ImageView al_img = (ImageView)convertView.findViewById(R.id.alarm_img);
+
+        if(listItem.getStat() != 8){
+            al_img.setColorFilter(Color.BLUE);
+        }
 
         LinearLayout item = (LinearLayout)convertView.findViewById(R.id.item);
         item.setOnClickListener(new View.OnClickListener() {
@@ -85,13 +92,14 @@ public class ListViewAdapter extends BaseAdapter {
         listItems.clear();
     }
 
-    public void addItem(String title, String sub, String sub2, String sub3){
+    public void addItem(String title, String sub, String sub2, String sub3, int stat){
         ListItem listItem = new ListItem();
 
         listItem.setTitle(title);
         listItem.setSub(sub);
         listItem.setSub2(sub2);
         listItem.setSub3(sub3);
+        listItem.setStat(stat);
 
         listItems.add(listItem);
     }

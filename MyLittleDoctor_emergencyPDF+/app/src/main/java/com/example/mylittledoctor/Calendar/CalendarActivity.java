@@ -100,12 +100,13 @@ public class CalendarActivity extends AppCompatActivity
                                 int dosage = cursor.getInt(2);
                                 int dosing_number = cursor.getInt(4);
                                 int dosing_days = cursor.getInt(3);
+                                int stat = cursor.getInt(8);
 
                                 //String indiredient = "주성분";
                                 String s_sub2 = "투약량 : " + dosage;
                                 String s_sub3 = "횟수 : " + dosing_number + "  /  일수 : " + dosing_days;
 
-                                adapter.addItem(S_title, indiredient, s_sub2, s_sub3);
+                                adapter.addItem(S_title, indiredient, s_sub2, s_sub3, stat);
                             }
                         }
                     }
@@ -199,12 +200,13 @@ public class CalendarActivity extends AppCompatActivity
                                 int dosage = cursor.getInt(2);
                                 int dosing_number = cursor.getInt(4);
                                 int dosing_days = cursor.getInt(3);
+                                int stat = cursor.getInt(8);
 
                                 //String indiredient = "주성분";
                                 String s_sub2 = "투약량 : " + dosage;
                                 String s_sub3 = "횟수 : " + dosing_number + "  /  일수 : " + dosing_days;
 
-                                adapter.addItem(S_title, indiredient, s_sub2, s_sub3);
+                                adapter.addItem(S_title, indiredient, s_sub2, s_sub3, stat);
                             }
                         }
                     }

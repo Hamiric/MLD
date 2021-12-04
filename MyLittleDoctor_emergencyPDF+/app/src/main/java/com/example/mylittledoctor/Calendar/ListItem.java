@@ -4,6 +4,7 @@ public class ListItem {
 
     private String title;
     private String sub, sub2, sub3;
+    private int stat;
 
     public String getTitle() {
         return title;
@@ -35,6 +36,14 @@ public class ListItem {
 
     public void setSub3(String sub3) {
         this.sub3 = sub3;
+    }
+
+    public int getStat() {
+        return stat;
+    }
+
+    public void setStat(int stat){
+        this.stat = stat;
     }
 
 }
