@@ -164,9 +164,9 @@ public class AlramActivity extends AppCompatActivity {
 
                 resetAlarm(calendar);
 
-                Toast.makeText(getApplicationContext(),m_hour_24 + "시 " + m_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(),l_hour_24 + "시 " + l_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(),d_hour_24 + "시 " + d_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),m_hour + "시 " + m_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),l_hour + "시 " + l_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),d_hour + "시 " + d_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
 
                 sendNotification();
 
@@ -322,9 +322,9 @@ public class AlramActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("setting", MODE_PRIVATE);
         NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
                 .setContentTitle("알림 예정")
-                .setContentText(" 아침 " + Integer.toString(sharedPreferences.getInt("m_hour", 8)) + " : " + Integer.toString(sharedPreferences.getInt("m_min", 30)) +
-                                " 점심 " + Integer.toString(sharedPreferences.getInt("l_hour", 12)) + " : " + Integer.toString(sharedPreferences.getInt("l_min", 30)) +
-                                " 저녁 " + Integer.toString(sharedPreferences.getInt("d_hour", 6)) + " : " + Integer.toString(sharedPreferences.getInt("d_min", 30)))
+                .setContentText(" 아침 " + Integer.toString(sharedPreferences.getInt("m_hour_24", 8)) + " : " + Integer.toString(sharedPreferences.getInt("m_min", 30)) +
+                                " 점심 " + Integer.toString(sharedPreferences.getInt("l_hour_24", 12)) + " : " + Integer.toString(sharedPreferences.getInt("l_min", 30)) +
+                                " 저녁 " + Integer.toString(sharedPreferences.getInt("d_hour_24", 6)) + " : " + Integer.toString(sharedPreferences.getInt("d_min", 30)))
                 .setAutoCancel(false)
                 .setSmallIcon(R.drawable.ic_launcher_foreground);
         return notifyBuilder;

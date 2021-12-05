@@ -9,6 +9,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
@@ -16,6 +18,7 @@ import androidx.core.app.NotificationCompat;
 import com.example.mylittledoctor.R;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -24,8 +27,67 @@ public class AlramReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        DBHelper dbHelper;
+        int Year, Month, Day, status;
+        int m_hour_24, m_min;
+        int l_hour_24, l_min;
+        int d_hour_24, d_min;
+
+        ArrayList<String> mtitle = new ArrayList<String>();
+        ArrayList<String> ltitle = new ArrayList<String>();
+        ArrayList<String> dtitle = new ArrayList<String>();
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences("setting", MODE_PRIVATE);
+
+        // 알람시간 확인
+        m_hour_24 = sharedPreferences.getInt("m_hour_24", 8);
+        m_min = sharedPreferences.getInt("m_min", 30);
+        l_hour_24 = sharedPreferences.getInt("l_hour_24", 12);
+        l_min = sharedPreferences.getInt("l_min", 30);
+        d_hour_24 = sharedPreferences.getInt("d_hour_24", 18);
+        d_min = sharedPreferences.getInt("d_min", 30);
+
+        // 현재 시간 확인
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+
+        Year = Calendar.getInstance().get(Calendar.YEAR);
+        Month = Calendar.getInstance().get(Calendar.MONTH) + 1;
+        Day = Calendar.getInstance().get(Calendar.DATE);
+
+        // db 읽기
+        dbHelper = new DBHelper(context, 1);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Medicine", null);
+
+        while (cursor.moveToNext()) {
+            if (Year == cursor.getInt(5)) {
+                if (Month == cursor.getInt(6)) {
+                    if (Day == cursor.getInt(7)) {
+
+                        status = cursor.getInt(8);
+                        String drag_title = cursor.getString(0);
+
+                        if(status == 2 | status == 3 | status == 5 | status == 7){
+                            mtitle.add(drag_title);
+                        }
+
+                        if(status == 1 | status == 3 | status == 4 | status == 5){
+                            ltitle.add(drag_title);
+                        }
+
+                        if(status == 2 | status == 3 | status == 4 | status == 6){
+                            dtitle.add(drag_title);
+                        }
+
+                    }
+                }
+            }
+        }
+
+        // 알람
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        Intent notificationIntent = new Intent(context, AlramActivity.class);
+        Intent notificationIntent = new Intent(context, CalendarActivity.class);
 
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
                 | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -54,6 +116,88 @@ public class AlramReceiver extends BroadcastReceiver {
         }
         else builder.setSmallIcon(R.mipmap.ic_launcher); // Oreo 이하에서 mipmap 사용하지 않으면 Couldn't create icon: StatusBarIcon 에러남
 
+        if(calendar.get(Calendar.HOUR_OF_DAY) == m_hour_24 && calendar.get(Calendar.MINUTE) == m_min){
+            String sub = "";
+            String t, r;
+            String spa = "\n";
+
+            for(int i = 0 ; i < mtitle.size() ; i ++) {
+                r = sub;
+                t = mtitle.get(i);
+
+                if(i == 0)
+                    sub = r + t;
+                else
+                    sub = spa + r + t;
+            }
+
+            builder.setAutoCancel(true)
+                    .setDefaults(NotificationCompat.DEFAULT_ALL)
+                    .setWhen(System.currentTimeMillis())
+                    .setTicker("{Time to watch some cool stuff!}")
+
+                    .setContentTitle("아침 알람입니다.")
+                    .setContentText(sub)
+                    .setContentInfo("INFO")
+                    .setContentIntent(pendingI)
+                    .setFullScreenIntent(pendingI, true);
+        }
+
+        if(calendar.get(Calendar.HOUR_OF_DAY) == l_hour_24 && calendar.get(Calendar.MINUTE) == l_min){
+            String sub = "";
+            String t, r;
+            String spa = "\n";
+
+            for(int i = 0 ; i < ltitle.size() ; i ++) {
+                r = sub;
+                t = ltitle.get(i);
+
+                if(i == 0)
+                    sub = r + t;
+                else
+                    sub = spa + r + t;
+            }
+
+            builder.setAutoCancel(true)
+                    .setDefaults(NotificationCompat.DEFAULT_ALL)
+                    .setWhen(System.currentTimeMillis())
+                    .setTicker("{Time to watch some cool stuff!}")
+
+                    .setContentTitle("점심 알람입니다.")
+                    .setContentText(sub)
+                    .setContentInfo("INFO")
+                    .setContentIntent(pendingI)
+                    .setFullScreenIntent(pendingI, true);
+        }
+
+        if(calendar.get(Calendar.HOUR_OF_DAY) == d_hour_24 && calendar.get(Calendar.MINUTE) == d_min){
+            String sub = "";
+            String t, r;
+            String spa = "\n";
+
+            for(int i = 0 ; i < dtitle.size() ; i ++) {
+                r = sub;
+                t = dtitle.get(i);
+
+                if(i == 0)
+                    sub = r + t;
+                else
+                    sub = spa + r + t;
+            }
+
+            builder.setAutoCancel(true)
+                    .setDefaults(NotificationCompat.DEFAULT_ALL)
+                    .setWhen(System.currentTimeMillis())
+                    .setTicker("{Time to watch some cool stuff!}")
+
+                    .setContentTitle("저녁 알람입니다.")
+                    .setContentText(sub)
+                    .setContentInfo("INFO")
+                    .setContentIntent(pendingI)
+                    .setFullScreenIntent(pendingI, true);
+        }
+
+        /*
         builder.setAutoCancel(true)
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setWhen(System.currentTimeMillis())
@@ -64,6 +208,7 @@ public class AlramReceiver extends BroadcastReceiver {
                 .setContentInfo("INFO")
                 .setContentIntent(pendingI)
                 .setFullScreenIntent(pendingI, true);
+         */
 
         if (notificationManager != null) {
 
