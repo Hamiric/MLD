@@ -83,6 +83,15 @@
         </receiver>
         <receiver android:name=".Calendar.AlramReceiver" />
 
+        <receiver
+            android:name=".Calendar.ResetAlarm"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.DATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".Encyclopedia.EncyclopediaActivity"
             android:exported="true" />

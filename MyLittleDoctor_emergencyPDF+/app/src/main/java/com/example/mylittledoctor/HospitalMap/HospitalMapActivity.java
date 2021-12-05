@@ -145,30 +145,29 @@ public class HospitalMapActivity extends AppCompatActivity implements Overlay.On
         fetchLocation(mapCenter.longitude, mapCenter.latitude, ServiceKey);
 
         // 지도 위치 검색 기능
-        Button SearchMap = (Button) findViewById(R.id.Search_map);
-        SearchMap.setOnClickListener(new Button.OnClickListener(){
+        EditText searchBox = findViewById(R.id.edittext);
+        Button searchButton = findViewById(R.id.Search_map);
+        searchButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
-                EditText editText = findViewById(R.id.edittext);
-                String str = editText.getText().toString();
-                List<Address> addressList = null;
+            public void onClick(View v) {
+                String searchText = searchBox.getText().toString();
+                Geocoder geocoder = new Geocoder(getBaseContext());
+                List<Address> addresses = null;
+
                 try{
-                    addressList = geocoder.getFromLocationName(str, 10);
-                } catch (IOException e){
-                    e.printStackTrace();
+                    addresses = geocoder.getFromLocationName(searchText, 3);
+                    if(addresses != null && !addresses.equals(" ")) {
+                        Address address = addresses.get(0);
+                        LatLng point = new LatLng(address.getLatitude(), address.getLongitude());
+
+                        String addressText = String.format("%s, %s", address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : " ", address.getFeatureName());
+
+                        CameraUpdate cameraUpdate = CameraUpdate.scrollTo(point);
+                        naverMap.moveCamera(cameraUpdate);
+                    }
+                } catch (Exception e) {
+
                 }
-                System.out.println(addressList.get(0).toString());
-                String []splitStr = addressList.get(0).toString().split(",");
-                String address = splitStr[0].substring(splitStr[0].indexOf("\"") + 1,splitStr[0].length() - 2);
-                System.out.println(address);
-
-                String latitude = splitStr[10].substring(splitStr[10].indexOf("=") + 1);
-                String longitude = splitStr[12].substring(splitStr[12].indexOf("=") + 1);
-
-                LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
-
-                CameraUpdate cameraUpdate = CameraUpdate.scrollTo(point);
-                naverMap.moveCamera(cameraUpdate);
             }
         });
     }

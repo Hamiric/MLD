@@ -4,14 +4,15 @@ import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -59,6 +60,8 @@ public class AlramActivity extends AppCompatActivity {
     private NotificationManager mNotificationManager;
     // Notification에 대한 ID 생성
     private static final int NOTIFICATION_ID = 999;
+
+    private BroadcastReceiver br = new ResetAlarm();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -149,15 +152,27 @@ public class AlramActivity extends AppCompatActivity {
 
                  */
 
-                diaryNotification(mcalendar, "morning");
-                diaryNotification(lcalendar, "lunch");
-                diaryNotification(dcalendar, "dinner");
+                diaryNotification(mcalendar);
+                diaryNotification(lcalendar);
+                diaryNotification(dcalendar);
+
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(System.currentTimeMillis()+1000*60*60*24);
+                calendar.set(Calendar.HOUR_OF_DAY, 0);
+                calendar.set(Calendar.MINUTE, 0);
+                calendar.set(Calendar.SECOND, 0);
+
+                resetAlarm(calendar);
 
                 Toast.makeText(getApplicationContext(),m_hour_24 + "시 " + m_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
                 Toast.makeText(getApplicationContext(),l_hour_24 + "시 " + l_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
                 Toast.makeText(getApplicationContext(),d_hour_24 + "시 " + d_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
 
                 sendNotification();
+
+                IntentFilter filter = new IntentFilter();
+                filter.addAction(Intent.ACTION_DATE_CHANGED);
+                registerReceiver(br, filter);
 
                 finish();
             }
@@ -222,7 +237,7 @@ public class AlramActivity extends AppCompatActivity {
 
     }
 
-    void diaryNotification(Calendar calendar, String string)
+    void diaryNotification(Calendar calendar)
     {
 //        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 //        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -323,5 +338,29 @@ public class AlramActivity extends AppCompatActivity {
         mNotificationManager.notify(NOTIFICATION_ID,notifyBuilder.build());
     }
 
+    // 자정이 될 때마다 알람 재설정
+    void resetAlarm(Calendar calendar) {
+
+        Boolean dailyNotify = true; // 무조건 알람을 사용
+
+        PackageManager pm = this.getPackageManager();
+        Intent alarmIntent = new Intent(this, ResetAlarm.class);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 888, alarmIntent, 0);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        if (alarmManager != null) {
+
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                    AlarmManager.INTERVAL_DAY, pendingIntent);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+            }
+        }
+        // 지정한 시간에 매일 알림
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+    }
 }
 

@@ -33,10 +33,11 @@
 
         <Button
             android:id="@+id/Search_map"
-            android:layout_width="match_parent"
+            android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
-            style="?android:borderlessButtonStyle"/>
+            style="?android:borderlessButtonStyle"
+            android:layout_gravity="right"/>
 
         <EditText
             android:id="@+id/edittext"
