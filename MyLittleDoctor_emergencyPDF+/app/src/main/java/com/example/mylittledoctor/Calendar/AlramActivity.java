@@ -152,9 +152,31 @@ public class AlramActivity extends AppCompatActivity {
 
                  */
 
-                diaryNotification(mcalendar);
-                diaryNotification(lcalendar);
-                diaryNotification(dcalendar);
+                SQLiteDatabase db = dbHelper.getReadableDatabase();
+                Cursor cursor = db.rawQuery("SELECT * FROM Medicine", null);
+
+                while (cursor.moveToNext()) {
+                    if (Year == cursor.getInt(5)) {
+                        if (Month == cursor.getInt(6)) {
+                            if (Day == cursor.getInt(7)) {
+
+                                int status = cursor.getInt(8);
+
+                                if(status == 2 | status == 3 | status == 5 | status == 7){
+                                    diaryNotification(mcalendar);
+                                }
+
+                                if(status == 1 | status == 3 | status == 4 | status == 5){
+                                    diaryNotification(lcalendar);
+                                }
+
+                                if(status == 2 | status == 3 | status == 4 | status == 6){
+                                    diaryNotification(dcalendar);
+                                }
+                            }
+                        }
+                    }
+                }
 
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(System.currentTimeMillis()+1000*60*60*24);

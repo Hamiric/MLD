@@ -2,6 +2,7 @@ package com.example.mylittledoctor.Calendar;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -137,7 +138,8 @@ public class AlramReceiver extends BroadcastReceiver {
                     .setTicker("{Time to watch some cool stuff!}")
 
                     .setContentTitle("아침 알람입니다.")
-                    .setContentText(sub)
+                    .setContentText("복용리스트 확인하기")
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(sub))
                     .setContentInfo("INFO")
                     .setContentIntent(pendingI)
                     .setFullScreenIntent(pendingI, true);
@@ -164,8 +166,8 @@ public class AlramReceiver extends BroadcastReceiver {
                     .setTicker("{Time to watch some cool stuff!}")
 
                     .setContentTitle("점심 알람입니다.")
-                    .setContentText(sub)
-                    .setContentInfo("INFO")
+                    .setContentText("복용리스트 확인하기")
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(sub))
                     .setContentIntent(pendingI)
                     .setFullScreenIntent(pendingI, true);
         }
@@ -191,7 +193,8 @@ public class AlramReceiver extends BroadcastReceiver {
                     .setTicker("{Time to watch some cool stuff!}")
 
                     .setContentTitle("저녁 알람입니다.")
-                    .setContentText(sub)
+                    .setContentText("복용리스트 확인하기")
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(sub))
                     .setContentInfo("INFO")
                     .setContentIntent(pendingI)
                     .setFullScreenIntent(pendingI, true);
