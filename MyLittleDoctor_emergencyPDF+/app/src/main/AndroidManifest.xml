@@ -16,6 +16,12 @@
         android:theme="@style/Theme.MyLittleDoctor"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".JoinActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
             android:name=".Search.SeachedActivity"
             android:exported="true" />
         <activity
@@ -82,7 +88,6 @@
             </intent-filter>
         </receiver>
         <receiver android:name=".Calendar.AlramReceiver" />
-
         <receiver
             android:name=".Calendar.ResetAlarm"
             android:enabled="true"

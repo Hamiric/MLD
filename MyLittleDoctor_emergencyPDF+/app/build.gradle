@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'//파이어베이스 시작시 추가
 }
 
 android {

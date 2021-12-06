@@ -6,6 +6,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mylittledoctor.LoginActivity;
 import com.example.mylittledoctor.R;
 
 public class Splash extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class Splash extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(Splash.this, MainActivity.class);
+                Intent intent=new Intent(Splash.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
