@@ -28,6 +28,7 @@
         android:foreground="@drawable/all_backbtn"
         android:background="#00ff0000"
         android:backgroundTint="@color/white"
+        android:onClick="back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintLeft_toLeftOf="parent"

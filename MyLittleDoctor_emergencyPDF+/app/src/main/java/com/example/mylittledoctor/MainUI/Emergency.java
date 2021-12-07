@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mylittledoctor.Calendar.CalendarActivity;
+import com.example.mylittledoctor.HospitalMap.HospitalMapActivity;
 import com.example.mylittledoctor.R;
 import com.github.barteksc.pdfviewer.PDFView;
 
@@ -17,6 +19,11 @@ public class Emergency extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency);
+    }
+
+    public void back(View view) {
+        Intent intent = new Intent(Emergency.this, MainActivity.class);
+        startActivity(intent);
     }
 
     public void btn1(View view) {
@@ -37,6 +44,9 @@ public class Emergency extends AppCompatActivity {
     public void btn4(View view) {
         Intent intent = new Intent(Emergency.this, FirstAidForEachSituationPDF.class);
         startActivity(intent);
+    }
+
+    public void menu(View view) {
     }
 
     public static class CprPDF extends AppCompatActivity {
@@ -90,4 +100,5 @@ public class Emergency extends AppCompatActivity {
             firstaidforeachsituation.fromAsset("응급상식/상황별 응급처치.pdf").load();
         }
     }
+
 }

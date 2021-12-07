@@ -28,6 +28,8 @@ public class Healthy_Knowledge extends AppCompatActivity {
         image_btn3=(Button)findViewById(R.id.image_btn3);
         image_btn4=(Button)findViewById(R.id.image_btn4);
     }
+
+
     public void click(View view){
         Intent intent;
         switch (view.getId()) {
@@ -48,5 +50,10 @@ public class Healthy_Knowledge extends AppCompatActivity {
                 startActivity(intent);
                 break;
         }
+    }
+
+    public void back(View view) {
+        Intent intent = new Intent(Healthy_Knowledge.this, MainActivity.class);
+        startActivity(intent);
     }
 }
