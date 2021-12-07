@@ -24,6 +24,7 @@ import com.example.mylittledoctor.Search.Medicine_Structure;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class PopupActivity extends Activity {
@@ -118,7 +119,51 @@ public class PopupActivity extends Activity {
         intent.putExtra("dosing_days",Integer.parseInt(dosing_days.getText().toString()));
         intent.putExtra("dosing_number",checking(dosing_number1,dosing_number2,dosing_number3));
 
-        dbHelper.insert(((EditText)autoSearchView).getText().toString(), ingredients.get(searching_ingredient(N_S)),Integer.parseInt(dosage.getText().toString()), Integer.parseInt(dosing_days.getText().toString()), checking(dosing_number1,dosing_number2,dosing_number3), Year, Month, Day, checking(dosing_number1,dosing_number2,dosing_number3));
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, Year);
+        if(Month == 1){
+            cal.set(Calendar.MONTH, Calendar.JANUARY);
+        }
+        else if(Month == 2){
+            cal.set(Calendar.MONTH, Calendar.FEBRUARY);
+        }
+        else if(Month == 3){
+            cal.set(Calendar.MONTH, Calendar.MARCH);
+        }
+        else if(Month == 4){
+            cal.set(Calendar.MONTH, Calendar.APRIL);
+        }
+        else if(Month == 5){
+            cal.set(Calendar.MONTH, Calendar.MAY);
+        }
+        else if(Month == 6){
+            cal.set(Calendar.MONTH, Calendar.JUNE);
+        }
+        else if(Month == 7){
+            cal.set(Calendar.MONTH, Calendar.JULY);
+        }
+        else if(Month == 8){
+            cal.set(Calendar.MONTH, Calendar.AUGUST);
+        }
+        else if(Month == 9){
+            cal.set(Calendar.MONTH, Calendar.SEPTEMBER);
+        }
+        else if(Month == 10){
+            cal.set(Calendar.MONTH, Calendar.OCTOBER);
+        }
+        else if(Month == 11){
+            cal.set(Calendar.MONTH, Calendar.NOVEMBER);
+        }
+        else if(Month == 12){
+            cal.set(Calendar.MONTH, Calendar.DECEMBER);
+        }
+        cal.set(Calendar.DAY_OF_MONTH, Day);
+
+
+        for(int i = 0 ; i < Integer.parseInt(dosing_days.getText().toString()) ; i ++){
+            dbHelper.insert(((EditText)autoSearchView).getText().toString(), ingredients.get(searching_ingredient(N_S)),Integer.parseInt(dosage.getText().toString()), (Integer.parseInt(dosing_days.getText().toString()) - i), checking(dosing_number1,dosing_number2,dosing_number3), cal.get(Calendar.YEAR), (cal.get(Calendar.MONTH) + 1), cal.get(Calendar.DAY_OF_MONTH), checking(dosing_number1,dosing_number2,dosing_number3));
+            cal.add(Calendar.DAY_OF_MONTH, 1);
+        }
 
         setResult(RESULT_OK, intent);
 
