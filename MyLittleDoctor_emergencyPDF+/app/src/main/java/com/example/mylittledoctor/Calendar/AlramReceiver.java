@@ -115,7 +115,7 @@ public class AlramReceiver extends BroadcastReceiver {
                 notificationManager.createNotificationChannel(channel);
             }
         }
-        else builder.setSmallIcon(R.mipmap.ic_launcher); // Oreo 이하에서 mipmap 사용하지 않으면 Couldn't create icon: StatusBarIcon 에러남
+        else builder.setSmallIcon(R.mipmap.ic_launcher_mld); // Oreo 이하에서 mipmap 사용하지 않으면 Couldn't create icon: StatusBarIcon 에러남
 
         if(calendar.get(Calendar.HOUR_OF_DAY) == m_hour_24 && calendar.get(Calendar.MINUTE) == m_min){
             String sub = "";
@@ -132,6 +132,12 @@ public class AlramReceiver extends BroadcastReceiver {
                     sub = spa + r + t;
             }
 
+            NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
+            for(int i = 0 ; i < mtitle.size() ; i++) {
+                t = mtitle.get(i);
+                inboxStyle.addLine(t);
+            }
+
             builder.setAutoCancel(true)
                     .setDefaults(NotificationCompat.DEFAULT_ALL)
                     .setWhen(System.currentTimeMillis())
@@ -139,7 +145,7 @@ public class AlramReceiver extends BroadcastReceiver {
 
                     .setContentTitle("아침 알람입니다.")
                     .setContentText("복용리스트 확인하기")
-                    .setStyle(new NotificationCompat.BigTextStyle().bigText(sub))
+                    .setStyle(inboxStyle)
                     .setContentInfo("INFO")
                     .setContentIntent(pendingI)
                     .setFullScreenIntent(pendingI, true);
@@ -160,6 +166,12 @@ public class AlramReceiver extends BroadcastReceiver {
                     sub = spa + r + t;
             }
 
+            NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
+            for(int i = 0 ; i < mtitle.size() ; i++) {
+                t = mtitle.get(i);
+                inboxStyle.addLine(t);
+            }
+
             builder.setAutoCancel(true)
                     .setDefaults(NotificationCompat.DEFAULT_ALL)
                     .setWhen(System.currentTimeMillis())
@@ -167,7 +179,7 @@ public class AlramReceiver extends BroadcastReceiver {
 
                     .setContentTitle("점심 알람입니다.")
                     .setContentText("복용리스트 확인하기")
-                    .setStyle(new NotificationCompat.BigTextStyle().bigText(sub))
+                    .setStyle(inboxStyle)
                     .setContentIntent(pendingI)
                     .setFullScreenIntent(pendingI, true);
         }
@@ -187,6 +199,12 @@ public class AlramReceiver extends BroadcastReceiver {
                     sub = spa + r + t;
             }
 
+            NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
+            for(int i = 0 ; i < mtitle.size() ; i++) {
+                t = mtitle.get(i);
+                inboxStyle.addLine(t);
+            }
+
             builder.setAutoCancel(true)
                     .setDefaults(NotificationCompat.DEFAULT_ALL)
                     .setWhen(System.currentTimeMillis())
@@ -194,7 +212,7 @@ public class AlramReceiver extends BroadcastReceiver {
 
                     .setContentTitle("저녁 알람입니다.")
                     .setContentText("복용리스트 확인하기")
-                    .setStyle(new NotificationCompat.BigTextStyle().bigText(sub))
+                    .setStyle(inboxStyle)
                     .setContentInfo("INFO")
                     .setContentIntent(pendingI)
                     .setFullScreenIntent(pendingI, true);

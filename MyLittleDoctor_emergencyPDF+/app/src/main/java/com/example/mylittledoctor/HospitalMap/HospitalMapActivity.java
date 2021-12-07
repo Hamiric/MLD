@@ -234,13 +234,12 @@ public class HospitalMapActivity extends AppCompatActivity implements Overlay.On
                     marker.setPosition(new LatLng(newitem.latitude, newitem.longitude));
                     marker.setAnchor(new PointF(0.0f, 0.0f));
 
-                    marker.setWidth(128);
-                    marker.setHeight(128);
+                    marker.setWidth(80);
+                    marker.setHeight(80);
                     marker.setIcon(OverlayImage.fromResource(R.drawable.hospitalmap_marker));
 
                     marker.setMap(naverMap);
                     marker.setOnClickListener(this);
-                    marker.setHideCollidedMarkers(true);
 
                     markerList.add(marker);
                 }

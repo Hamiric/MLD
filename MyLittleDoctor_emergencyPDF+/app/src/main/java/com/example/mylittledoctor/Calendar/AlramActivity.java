@@ -178,13 +178,13 @@ public class AlramActivity extends AppCompatActivity {
                     }
                 }
 
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(System.currentTimeMillis()+1000*60*60*24);
-                calendar.set(Calendar.HOUR_OF_DAY, 0);
-                calendar.set(Calendar.MINUTE, 0);
-                calendar.set(Calendar.SECOND, 0);
-
-                resetAlarm(calendar);
+//                Calendar calendar = Calendar.getInstance();
+//                calendar.setTimeInMillis(System.currentTimeMillis()+1000*60*60*24);
+//                calendar.set(Calendar.HOUR_OF_DAY, 0);
+//                calendar.set(Calendar.MINUTE, 0);
+//                calendar.set(Calendar.SECOND, 0);
+//
+//                resetAlarm(calendar);
 
                 Toast.makeText(getApplicationContext(),m_hour + "시 " + m_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
                 Toast.makeText(getApplicationContext(),l_hour + "시 " + l_min +  "분 " +"에 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
