@@ -17,6 +17,7 @@
 ## 주요 코드
 > MapView (XML)
 ...xml
+
 <com.naver.maps.map.MapView
             android:id="@+id/map_view"
             android:layout_width="match_parent"
@@ -27,6 +28,7 @@
 
 >HospitalMapActivity (JAVA)
 ...java
+
 protected void onCreate(Bundle savedInstanceState) {
     ...
     // 네이버 지도 불러오기
