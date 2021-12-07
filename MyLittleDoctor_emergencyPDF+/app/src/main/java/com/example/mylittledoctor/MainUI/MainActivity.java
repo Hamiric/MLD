@@ -92,7 +92,25 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.closeDrawers();
 
                 int id=item.getItemId();
-                if(id==R.id.logout){
+                Intent intent;
+                if(id==R.id.menu1){
+                    intent = new Intent(MainActivity.this, CalendarActivity.class);
+                    startActivity(intent);
+                }else if(id==R.id.menu2){
+                    intent = new Intent(MainActivity.this, CalendarActivity.class);
+                    startActivity(intent);
+                }else if(id==R.id.menu3){
+                    intent = new Intent(MainActivity.this, HospitalMapActivity.class);
+                    startActivity(intent);
+                }else if(id==R.id.menu4){
+                    intent = new Intent(MainActivity.this, SearchingActivity.class);
+                    startActivity(intent);
+                }else if(id==R.id.menu5){
+                    intent = new Intent(MainActivity.this, Emergency.class);
+                    startActivity(intent);
+                }else if(id==R.id.menu6){
+
+                }else if(id==R.id.menu7){
                     SharedPreferences sp=getSharedPreferences("state_login", Activity.MODE_PRIVATE);
                     SharedPreferences.Editor editor=sp.edit();
                     editor.putInt("state",1);
@@ -100,11 +118,13 @@ public class MainActivity extends AppCompatActivity {
 
                     mAuth.signOut();
 
-                    Intent intent=new Intent(MainActivity.this, LoginActivity.class);
+                    intent=new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
 
                     Toast.makeText(getApplicationContext(),"로그아웃하였습니다.", Toast.LENGTH_SHORT).show();
+
+                }else{
 
                 }
                 return true;
@@ -116,8 +136,8 @@ public class MainActivity extends AppCompatActivity {
         nav_name=(TextView)findViewById(R.id.nav_name1);
         nav_email=(TextView)findViewById(R.id.nav_email1);
 
-        //getString(필드값)을 통해 해당 필드에 대응하는 value값을 가져온다.
-        //nav_name.setText("이학준");
+        //getString(필드값)을 통해 해당 필드에 대 //nav_name.setText("이학준");응하는 value값을 가져온다.
+        //
         // nav_email.setText(user.getEmail());
     }
 

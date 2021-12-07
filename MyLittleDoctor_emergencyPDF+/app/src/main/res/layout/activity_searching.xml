@@ -136,7 +136,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:layout_constraintBottom_toTopOf="@id/edt1"
-            android:id="@+id/img"
+            android:id="@+id/img_btn"
             android:src="@drawable/seach_reset_icon"
             app:layout_constraintRight_toRightOf="parent" />
 

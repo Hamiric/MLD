@@ -2,13 +2,19 @@ package com.example.mylittledoctor.Search;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -33,11 +39,13 @@ public class SearchingActivity extends AppCompatActivity {
     LinearLayout information;
     Button btn1;
     ImageButton btn2;
+    ImageView img_btn;
     SearchView sv;
     ArrayList<Medicine_Structure> Medicine_List=new ArrayList<Medicine_Structure>();
 
     List list=new ArrayList<Object>();
     Map<String, String> excel_sheet=new HashMap<String,String>();
+    progressdialog customProgressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +53,21 @@ public class SearchingActivity extends AppCompatActivity {
 
         init();
 
-        btn1.setOnClickListener(new View.OnClickListener() {
+        img_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                edt1.setText("");
+                edt2.setText("");
+                edt3.setText("");
+            }
+        });
+
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View v) {
+
                 String Medicine_Name = edt1.getText().toString();
                 String Corporate_Name=edt2.getText().toString();
                 String Ingredient_Name=edt3.getText().toString();
@@ -124,9 +144,11 @@ public class SearchingActivity extends AppCompatActivity {
         btn1=(Button)findViewById(R.id.btn1);
         btn2=(ImageButton)findViewById(R.id.imageButton2);
         information=(LinearLayout)findViewById(R.id.information);
+        img_btn=(ImageView) findViewById(R.id.img_btn);
     }
 
     void searching(String Searching_Name){
+
         for (int i = 1; i < 12; i++) {
             Log.d("확인",i+"번째액셀파일실행");
             try {
@@ -168,6 +190,9 @@ public class SearchingActivity extends AppCompatActivity {
             }
 
         }
+
     }
+
+
 
 }
