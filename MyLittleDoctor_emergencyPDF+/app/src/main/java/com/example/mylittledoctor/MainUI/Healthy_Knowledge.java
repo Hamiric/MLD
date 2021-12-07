@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,10 +17,22 @@ import com.example.mylittledoctor.Search.SearchingActivity;
 
 public class Healthy_Knowledge extends AppCompatActivity {
     Button image_btn1, image_btn2, image_btn3, image_btn4;
+    LinearLayout searching;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_healthy_knowledge);
+
+        searching = (LinearLayout)findViewById(R.id.searching);
+        searching.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Healthy_Knowledge.this, SearchingActivity.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
     }
 
     void view_init(){
@@ -45,10 +58,12 @@ public class Healthy_Knowledge extends AppCompatActivity {
                 intent=new Intent(Healthy_Knowledge.this, SideEffect.class);
                 startActivity(intent);
                 break;
-            case R.id.image_btn4:
+            /*case R.id.image_btn4:
                 intent=new Intent(Healthy_Knowledge.this, SearchingActivity.class);
                 startActivity(intent);
                 break;
+            */
+
         }
     }
 

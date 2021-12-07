@@ -53,6 +53,69 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/searching"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="의약품 검색"
+                    android:textColor="#55000000"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:textSize="20sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#33000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/information"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="건강 상식"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#7FC4FD" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="598"
         android:orientation="vertical">
@@ -88,7 +151,8 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="25dp"
             android:onClick="click"/>
-        <Button
+
+        <!--Button
             android:id="@+id/image_btn4"
             android:background="@drawable/healthy4"
             android:layout_width="match_parent"
@@ -97,7 +161,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="25dp"
-            android:onClick="click"/>
+            android:onClick="click"/-->
 
 
     </LinearLayout>

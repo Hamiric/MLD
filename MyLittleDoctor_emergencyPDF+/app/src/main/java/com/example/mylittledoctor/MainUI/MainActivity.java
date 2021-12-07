@@ -24,6 +24,7 @@ import com.example.mylittledoctor.Encyclopedia.EncyclopediaActivity;
 import com.example.mylittledoctor.HospitalMap.HospitalMapActivity;
 import com.example.mylittledoctor.LoginActivity;
 import com.example.mylittledoctor.R;
+import com.example.mylittledoctor.Search.SearchingActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -181,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.icon_btn2:
-                intent = new Intent(MainActivity.this, Healthy_Knowledge.class);
+                intent = new Intent(MainActivity.this, SearchingActivity.class);
                 startActivity(intent);
                 break;
             case R.id.icon_btn3:
