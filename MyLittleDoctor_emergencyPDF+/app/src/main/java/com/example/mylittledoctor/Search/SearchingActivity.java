@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -31,7 +32,7 @@ public class SearchingActivity extends AppCompatActivity {
     EditText edt1,edt2,edt3;
     LinearLayout information;
     Button btn1;
-    Button btn2;
+    ImageButton btn2;
     SearchView sv;
     ArrayList<Medicine_Structure> Medicine_List=new ArrayList<Medicine_Structure>();
 
@@ -107,6 +108,13 @@ public class SearchingActivity extends AppCompatActivity {
             }
         });
 
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
     void init(){
@@ -114,6 +122,7 @@ public class SearchingActivity extends AppCompatActivity {
         edt2=(EditText)findViewById(R.id.edt2);
         edt3=(EditText)findViewById(R.id.edt3);
         btn1=(Button)findViewById(R.id.btn1);
+        btn2=(ImageButton)findViewById(R.id.imageButton2);
         information=(LinearLayout)findViewById(R.id.information);
     }
 

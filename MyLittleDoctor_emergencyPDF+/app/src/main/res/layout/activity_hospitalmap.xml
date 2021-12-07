@@ -47,25 +47,6 @@
             app:layout_constraintLeft_toLeftOf="@+id/h_tab_btn1"
             app:layout_constraintRight_toRightOf="@+id/h_tab_btn1"/>
 
-        <Button
-            android:id="@+id/h_tab_btn2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            style="?android:borderlessButtonStyle"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintHorizontal_bias="1.0" />
-
-        <View
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/all_menu"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="@+id/h_tab_btn2"
-            app:layout_constraintRight_toRightOf="@+id/h_tab_btn2"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

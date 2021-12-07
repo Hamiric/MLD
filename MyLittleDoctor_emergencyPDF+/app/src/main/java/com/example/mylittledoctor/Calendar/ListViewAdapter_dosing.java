@@ -123,9 +123,7 @@ public class ListViewAdapter_dosing extends BaseAdapter {
                     cal.set(Calendar.MONTH, Calendar.DECEMBER);
                 }
                 cal.set(Calendar.DAY_OF_MONTH, Day);
-
-                Toast.makeText(mContext.getApplicationContext(), "" + cal.get(Calendar.YEAR) + "년 " + (cal.get(Calendar.MONTH)+1) + "월 " + cal.get(Calendar.DAY_OF_MONTH) + "일", Toast.LENGTH_LONG).show();
-
+                
                 for(int i = 0 ; i < listItem.getNumber() ; i ++){
                     dbHelper.Delete(listItem.getTitle(), cal.get(Calendar.YEAR), (cal.get(Calendar.MONTH)+1), cal.get(Calendar.DAY_OF_MONTH));
                     cal.add(Calendar.DAY_OF_MONTH, 1);
