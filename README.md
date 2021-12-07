@@ -13,7 +13,7 @@
 - [로그인 / 메인]()
 - [의학정보](https://github.com/Hamiric/MLD/blob/main/Medical_Information.md)
 - [병원지도](https://github.com/Hamiric/MLD/blob/main/Hospital_Map.md)
-- [기록관리]()
+- [기록관리](https://github.com/Hamiric/MLD/blob/main/Record_Management.md)
 
 ## 주의사항
 어플리케이션 UI를 Android Studio 에뮬레이터의 **5.4" FWVGA(480 x 854, 대형 mdpi 화면)** 을 기준으로 제작되었습니다. 최대한 동적 UI를 제작/구현하려고 노력하였으나, 이 점이 반영되지 않은 부분이 많으므로, 어플 사용에 최대한 방해를 받지 않기 위해서는 해당 해상도기준에 맞는 플랫폼을 사용하여야 합니다.
