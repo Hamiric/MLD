@@ -22,8 +22,9 @@ public class Emergency extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent intent = new Intent(Emergency.this, MainActivity.class);
-        startActivity(intent);
+       // Intent intent = new Intent(Emergency.this, MainActivity.class);
+       // startActivity(intent);
+        finish();
     }
 
     public void btn1(View view) {
@@ -44,6 +45,7 @@ public class Emergency extends AppCompatActivity {
     public void btn4(View view) {
         Intent intent = new Intent(Emergency.this, FirstAidForEachSituationPDF.class);
         startActivity(intent);
+
     }
 
     public void menu(View view) {

@@ -65,8 +65,10 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:id="@+id/radio_group">
                 <RadioButton
+                    android:id="@+id/radio_btn1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -74,6 +76,7 @@
                     android:buttonTint="@color/white"
                     android:textColor="@color/white"/>
                 <RadioButton
+                    android:id="@+id/radio_btn2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

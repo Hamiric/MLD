@@ -58,11 +58,18 @@ public class HospitalMapActivity extends AppCompatActivity implements Overlay.On
     private final int num = 100;
     private final String ServiceKey =
             "rGDxc3F8azkUy5D1UwkyiX6i9/cDIIRngyQTIXgSLau7d4UCkLckhb6TKkH+PlEVcN4S16gV3S+a9ierZRfa/g==";
-
+    Button h_tab_btn1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospitalmap);
+        h_tab_btn1=(Button)findViewById(R.id.h_tab_btn1);
+        h_tab_btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         mapView = (MapView) findViewById(R.id.map_view);
         mapView.onCreate(savedInstanceState);

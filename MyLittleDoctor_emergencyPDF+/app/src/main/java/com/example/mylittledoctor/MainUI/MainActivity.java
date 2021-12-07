@@ -1,20 +1,28 @@
 package com.example.mylittledoctor.MainUI;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mylittledoctor.Calendar.CalendarActivity;
 import com.example.mylittledoctor.Encyclopedia.EncyclopediaActivity;
 import com.example.mylittledoctor.HospitalMap.HospitalMapActivity;
+import com.example.mylittledoctor.LoginActivity;
 import com.example.mylittledoctor.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,17 +39,23 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView nv;
     FirebaseAuth mAuth;
-    FirebaseFirestore db;
     FirebaseUser user;
     ViewPager vp;
+    TextView nav_name;
+    TextView nav_email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         view_init();
+        firebase_init();
         page_view();
-        }
+
+        Drawer_and_Navigation_init();
+        Nav_init();
+        tab_click_event();
+    }
 
     void view_init(){
         tab_btn1=(Button)findViewById(R.id.tab_btn1);
@@ -55,6 +69,64 @@ public class MainActivity extends AppCompatActivity {
         img_cicle3=(ImageView)findViewById(R.id.circle3);
         img_cicle4=(ImageView)findViewById(R.id.circle4);
 
+    }
+    void firebase_init(){
+        try {
+            mAuth = FirebaseAuth.getInstance();
+            user = mAuth.getCurrentUser();
+        }catch (Exception e){
+            Intent intent=new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+    void Drawer_and_Navigation_init(){
+        drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
+        nv=(NavigationView) findViewById(R.id.nav_view);
+
+        nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                item.setChecked(true);
+                drawerLayout.closeDrawers();
+
+                int id=item.getItemId();
+                if(id==R.id.logout){
+                    SharedPreferences sp=getSharedPreferences("state_login", Activity.MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sp.edit();
+                    editor.putInt("state",1);
+                    editor.commit();
+
+                    mAuth.signOut();
+
+                    Intent intent=new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                    Toast.makeText(getApplicationContext(),"로그아웃하였습니다.", Toast.LENGTH_SHORT).show();
+
+                }
+                return true;
+            }
+        });
+    }
+    void Nav_init(){
+        //  String uid=user.getUid();
+        nav_name=(TextView)findViewById(R.id.nav_name1);
+        nav_email=(TextView)findViewById(R.id.nav_email1);
+
+        //getString(필드값)을 통해 해당 필드에 대응하는 value값을 가져온다.
+        //nav_name.setText("이학준");
+        // nav_email.setText(user.getEmail());
+    }
+
+    void tab_click_event(){
+        tab_btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.END);
+            }
+        });
     }
     void page_view(){
         vp=(ViewPager) findViewById(R.id.vp);

@@ -3,7 +3,9 @@ package com.example.mylittledoctor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -63,12 +65,12 @@ public class JoinActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                     Intent intent=new Intent(JoinActivity.this,LoginActivity.class);
-                                    startActivity(intent);
-                                     finish();
+                                    // Intent intent=new Intent(JoinActivity.this,LoginActivity.class);
+                                    // startActivity(intent);
+                                    // finish();
                                 }else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(getApplicationContext(),"실패",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"올바르지 않은 이메일 형식입니다.",Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
@@ -82,6 +84,21 @@ public class JoinActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     user = mAuth.getCurrentUser();
                                     uid=user.getUid();
+
+
+                                    SharedPreferences sp=getSharedPreferences("user_id", Activity.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor=sp.edit();
+                                    editor.putString(uid,edt1.getText().toString());
+                                    editor.commit();
+
+
+                                    Intent intent=new Intent(JoinActivity.this,LoginActivity.class);
+                                    startActivity(intent);
+
+
+                                    mAuth.signOut();
+                                    Toast.makeText(getApplicationContext(),"계정생성 완료!",Toast.LENGTH_SHORT).show();
+                                    finish();
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Toast.makeText(getApplicationContext(),"접속실패",Toast.LENGTH_SHORT).show();
@@ -90,17 +107,20 @@ public class JoinActivity extends AppCompatActivity {
                         });
 
                 //계정생성후 접속까지의 과정이 실행되기 전에, 밑에 코드가 실행되는 것을 방지하기 위해 의도적으로 실행을 지연.
-              /*  new Handler().postDelayed(new Runnable() {
+               /* new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         user_data.put("name",edt1.getText().toString());
                         try{
                             db=FirebaseFirestore.getInstance();
+                            Log.d("확인","uid:"+uid+"정보:"+user_data.get("name"));
                             db.collection(uid).document("user_info").set(user_data).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     Toast.makeText(getApplicationContext(),"계정생성완료!",Toast.LENGTH_LONG).show();
                                     FirebaseAuth.getInstance().signOut();
+                                    Intent intent=new Intent(JoinActivity.this,LoginActivity.class);
+                                    startActivity(intent);
                                     finish();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
@@ -108,7 +128,11 @@ public class JoinActivity extends AppCompatActivity {
                                 public void onFailure(@NonNull Exception e) {
                                     Toast.makeText(getApplicationContext(),"계정생성실패",Toast.LENGTH_SHORT).show();
                                 }
-                            });}catch (NullPointerException e){
+                            });
+
+
+
+                        }catch (NullPointerException e){
 
                         }
 

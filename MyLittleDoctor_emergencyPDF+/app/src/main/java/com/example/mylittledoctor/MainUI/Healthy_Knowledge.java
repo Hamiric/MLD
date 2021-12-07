@@ -53,7 +53,8 @@ public class Healthy_Knowledge extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent intent = new Intent(Healthy_Knowledge.this, MainActivity.class);
-        startActivity(intent);
+      //  Intent intent = new Intent(Healthy_Knowledge.this, MainActivity.class);
+       // startActivity(intent);
+        finish();
     }
 }
