@@ -16,18 +16,18 @@
 
 ## 주요 코드
 > MapView (XML)
-'''xml
+```xml
 
 <com.naver.maps.map.MapView
             android:id="@+id/map_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="187dp">
-'''
+```
 해당 코드를 이용하여 네이버 지도를 구현한다.
 
 >HospitalMapActivity (JAVA)
-'''java
+```java
 
 protected void onCreate(Bundle savedInstanceState) {
     ...
@@ -90,7 +90,7 @@ protected void onCreate(Bundle savedInstanceState) {
                     marker.setPosition(new LatLng(newitem.latitude, newitem.longitude));
                     marker.setMap(naverMap);
                     ...
-'''
+```
        
 
 
