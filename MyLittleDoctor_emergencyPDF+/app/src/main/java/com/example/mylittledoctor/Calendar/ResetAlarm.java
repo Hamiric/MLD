@@ -29,6 +29,14 @@ public class ResetAlarm extends BroadcastReceiver {
         int l_hour_24, l_min;
         int d_hour_24, d_min;
 
+        int morning = 830;
+        int lunch = 1230;
+        int dinner = 1830;
+
+        boolean is_morning_setting = false;
+        boolean is_lunch_setting = false;
+        boolean is_dinner_setting = false;
+
         SharedPreferences sharedPreferences = context.getSharedPreferences("setting", MODE_PRIVATE);
         m_hour_24 = sharedPreferences.getInt("m_hour_24", 8);
         m_min = sharedPreferences.getInt("m_min", 30);
@@ -58,7 +66,8 @@ public class ResetAlarm extends BroadcastReceiver {
                             mcalendar.set(Calendar.HOUR_OF_DAY, m_hour_24);
                             mcalendar.set(Calendar.MINUTE, m_min);
                             mcalendar.set(Calendar.SECOND, 0);
-                            diaryNotification(mcalendar, context);
+                            diaryNotification(mcalendar, context, morning);
+                            is_morning_setting = true;
                         }
 
                         if(status == 1 | status == 3 | status == 4 | status == 5){
@@ -67,7 +76,8 @@ public class ResetAlarm extends BroadcastReceiver {
                             lcalendar.set(Calendar.HOUR_OF_DAY, l_hour_24);
                             lcalendar.set(Calendar.MINUTE, l_min);
                             lcalendar.set(Calendar.SECOND, 0);
-                            diaryNotification(lcalendar, context);
+                            diaryNotification(lcalendar, context, lunch);
+                            is_lunch_setting = true;
                         }
 
                         if(status == 2 | status == 3 | status == 4 | status == 6){
@@ -76,19 +86,55 @@ public class ResetAlarm extends BroadcastReceiver {
                             dcalendar.set(Calendar.HOUR_OF_DAY, d_hour_24);
                             dcalendar.set(Calendar.MINUTE, d_min);
                             dcalendar.set(Calendar.SECOND, 0);
-                            diaryNotification(dcalendar, context);
+                            diaryNotification(dcalendar, context, dinner);
+                            is_dinner_setting = true;
                         }
                     }
                 }
             }
         }
+
+        // 알람 설정 Toast (한번만 울리도록)
+        if(is_morning_setting){
+            Calendar mcalendar = Calendar.getInstance();
+            mcalendar.setTimeInMillis(System.currentTimeMillis());
+            mcalendar.set(Calendar.HOUR_OF_DAY, m_hour_24);
+            mcalendar.set(Calendar.MINUTE, m_min);
+            mcalendar.set(Calendar.SECOND, 0);
+            Date currentDateTime = mcalendar.getTime();
+            String date_text = new SimpleDateFormat("yyyy년 MM월 dd일 EE요일 a hh시 mm분", Locale.getDefault()).format(currentDateTime);
+            Toast.makeText(context.getApplicationContext(), "다음 알람은" + date_text + "으로 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
+        }
+
+        if (is_lunch_setting){
+            Calendar lcalendar = Calendar.getInstance();
+            lcalendar.setTimeInMillis(System.currentTimeMillis());
+            lcalendar.set(Calendar.HOUR_OF_DAY, l_hour_24);
+            lcalendar.set(Calendar.MINUTE, l_min);
+            lcalendar.set(Calendar.SECOND, 0);
+            Date currentDateTime = lcalendar.getTime();
+            String date_text = new SimpleDateFormat("yyyy년 MM월 dd일 EE요일 a hh시 mm분", Locale.getDefault()).format(currentDateTime);
+            Toast.makeText(context.getApplicationContext(), "다음 알람은" + date_text + "으로 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
+        }
+
+        if(is_dinner_setting){
+            Calendar dcalendar = Calendar.getInstance();
+            dcalendar.setTimeInMillis(System.currentTimeMillis());
+            dcalendar.set(Calendar.HOUR_OF_DAY, d_hour_24);
+            dcalendar.set(Calendar.MINUTE, d_min);
+            dcalendar.set(Calendar.SECOND, 0);
+            Date currentDateTime = dcalendar.getTime();
+            String date_text = new SimpleDateFormat("yyyy년 MM월 dd일 EE요일 a hh시 mm분", Locale.getDefault()).format(currentDateTime);
+            Toast.makeText(context.getApplicationContext(), "다음 알람은" + date_text + "으로 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
-    void diaryNotification(Calendar calendar, Context context){
+    void diaryNotification(Calendar calendar, Context context, int channel){
 
         Intent alarmIntent = new Intent(context, AlramReceiver.class);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, HoUtils.createID(), alarmIntent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, channel, alarmIntent, 0);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
@@ -101,9 +147,5 @@ public class ResetAlarm extends BroadcastReceiver {
                 alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
             }
         }
-
-        Date currentDateTime = calendar.getTime();
-        String date_text = new SimpleDateFormat("yyyy년 MM월 dd일 EE요일 a hh시 mm분", Locale.getDefault()).format(currentDateTime);
-        Toast.makeText(context.getApplicationContext(), "다음 알람은" + date_text + "으로 알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
     }
 }
