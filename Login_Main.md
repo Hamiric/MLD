@@ -2,7 +2,7 @@
 
 로그인       |  회원가입 | 메인
 :-------------------------:|:-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/58100710/144950027-ebf3a06b-d74d-4101-9568-f3ce1da9220c.jpg)  |  ![](https://user-images.githubusercontent.com/58100710/144950015-fd4c387e-7a47-4a65-9959-b65865ae23b5.jpg) | ![](https://user-images.githubusercontent.com/58100710/144950027-ebf3a06b-d74d-4101-9568-f3ce1da9220c.jpg)  |  ![](https://user-images.githubusercontent.com/58100710/144950015-fd4c387e-7a47-4a65-9959-b65865ae23b5.jpg)
+![](https://user-images.githubusercontent.com/58100710/144950027-ebf3a06b-d74d-4101-9568-f3ce1da9220c.jpg)  |  ![](https://user-images.githubusercontent.com/58100710/144950015-fd4c387e-7a47-4a65-9959-b65865ae23b5.jpg) | ![](https://user-images.githubusercontent.com/58100710/144950027-ebf3a06b-d74d-4101-9568-f3ce1da9220c.jpg)  |  ![](https://user-images.githubusercontent.com/58100710/144952131-de92fbf2-c65a-4804-af82-e2bc21f9d880.png)
 
 ## 기능 소개
 사용자 인증을 통해 어플에서 사용자의 정보를 확인하고, 파이어베이스에 입력되어있는 사용자 정보를 어플에 반영시켜주는 역할을 수행한다. 또한 사용자의 기록등을 웹DB에 기록함으로써 사용자 개인 기록이 도용되지 않도록 하는 것을 목표로 한다.
