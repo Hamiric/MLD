@@ -24,12 +24,14 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <ImageButton
             android:id="@+id/tab_btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="14dp"
             android:backgroundTint="#00000000"
+            android:onClick="back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.022"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +42,9 @@
             android:id="@+id/tab_btn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="12dp"
             android:backgroundTint="#00000000"
+            android:onClick="click"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.978"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +58,7 @@
         android:orientation="vertical">
         <Button
             android:id="@+id/image_btn1"
-            android:background="@drawable/healthy_image1"
+            android:background="@drawable/healthy1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -63,45 +66,37 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="25dp"
             android:layout_marginTop="25dp"
-            android:text="약물백과"
-            android:textStyle="bold"
             android:onClick="click"/>
         <Button
             android:id="@+id/image_btn2"
-            android:background="@drawable/healthy_image2"
+            android:background="@drawable/healthy2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="25dp"
-            android:text="의학뉴스"
-            android:textStyle="bold"
             android:onClick="click"/>
 
         <Button
             android:id="@+id/image_btn3"
-            android:background="@drawable/healthy_image3"
+            android:background="@drawable/healthy3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="25dp"
-            android:text="부작용리포트"
-            android:textStyle="bold"
             android:onClick="click"/>
         <Button
             android:id="@+id/image_btn4"
-            android:background="@drawable/healthy_image5"
+            android:background="@drawable/healthy4"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="25dp"
-            android:text="건강상식포스트"
-            android:textStyle="bold"
             android:onClick="click"/>
 
 

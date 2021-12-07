@@ -19,6 +19,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
 
+import com.example.mylittledoctor.MainUI.Healthy_Knowledge;
+import com.example.mylittledoctor.MainUI.MainActivity;
 import com.example.mylittledoctor.R;
 
 import java.util.ArrayList;
@@ -304,5 +306,10 @@ public class News extends AppCompatActivity {
     }
 
     public void GoSideEffect(View view) {
+    }
+
+    public void back(View view) {
+        Intent intent = new Intent(News.this, Healthy_Knowledge.class);
+        startActivity(intent);
     }
 }
