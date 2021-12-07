@@ -10,7 +10,7 @@
 
 
 ## 개요
-- [로그인 / 메인]()
+- [로그인 / 메인](https://github.com/Hamiric/MLD/blob/main/Login_Main.md)
 - [의학정보](https://github.com/Hamiric/MLD/blob/main/Medical_Information.md)
 - [병원지도](https://github.com/Hamiric/MLD/blob/main/Hospital_Map.md)
 - [기록관리](https://github.com/Hamiric/MLD/blob/main/Record_Management.md)
