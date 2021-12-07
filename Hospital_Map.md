@@ -29,29 +29,78 @@
 >HospitalMapActivity (JAVA)
 ```java
 
+@Override
 protected void onCreate(Bundle savedInstanceState) {
-    ...
+    //...
+    
     // 네이버 지도 불러오기
     mapView = (MapView) findViewById(R.id.map_view);
     mapView.onCreate(savedInstanceState);
-    mapView.getMapAsync(this);    
-    ...
-    // 네이버 지도가 불러오면 실행되는 메서드
-    public void onMapReady (@NonNull NaverMap naverMap) {
+    mapView.getMapAsync(this); 
     
-        // 네이버 지도 세팅
-        this.naverMap = naverMap;
-        naverMap.setLocationSource(locationSource);
-        UiSettings uiSettings = naverMap.getUiSettings();
-        uiSettings.setLocationButtonEnabled(false);
-        uiSettings.setZoomControlEnabled(false);
-        LocationButtonView locationButtonView = findViewById(R.id.locationbutton);
-        locationButtonView.setMap(naverMap);
-        ...
+    // 지도의 마커를 클릭하면 병원 정보를 infowindow로 보여줌.
+    infoWindow = new InfoWindow();
+    infoWindow.setAdapter(new InfoWindow.DefaultViewAdapter(this) {
+        @NonNull
+        @Override
+        protected View getContentView(@NonNull InfoWindow infoWindow) {
+            Marker marker = infoWindow.getMarker();
+            LocationResult.body.items.item infoitem = (LocationResult.body.items.item) marker.getTag();
+            View view = View.inflate(HospitalMapActivity.this, R.layout.item_hospitalmap_recycler, null);
+            ((TextView) view.findViewById(R.id.dutyName)).setText(infoitem.dutyName);
+            ((TextView) view.findViewById(R.id.distance)).setText(Double.toString(infoitem.distance) + "km");
+            ((TextView) view.findViewById(R.id.dutyAddr)).setText(infoitem.dutyAddr);
+            return view;
+        }
+    });
+    //...
+    
+    // 지도 위치 검색 기능
+    EditText searchBox = findViewById(R.id.edittext);
+    Button searchButton = findViewById(R.id.Search_map);
+    searchButton.setOnClickListener(new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            String searchText = searchBox.getText().toString();
+            Geocoder geocoder = new Geocoder(getBaseContext());
+            List<Address> addresses = null;
+
+            try{
+                addresses = geocoder.getFromLocationName(searchText, 3);
+                if(addresses != null && !addresses.equals(" ")) {
+                    Address address = addresses.get(0);
+                    LatLng point = new LatLng(address.getLatitude(), address.getLongitude());
+
+                    String addressText = String.format("%s, %s", address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : " ", address.getFeatureName());
+
+                    CameraUpdate cameraUpdate = CameraUpdate.scrollTo(point);
+                    naverMap.moveCamera(cameraUpdate);
+                }
+            } catch (Exception e){
+            }
+        }
+    });
+}
+    
+// 네이버 지도가 불러오면 실행되는 메서드
+@Override
+public void onMapReady (@NonNull NaverMap naverMap) {
+    
+    // 네이버 지도 세팅
+    this.naverMap = naverMap;
+    naverMap.setLocationSource(locationSource);
+    UiSettings uiSettings = naverMap.getUiSettings();
+    uiSettings.setLocationButtonEnabled(false);
+    uiSettings.setZoomControlEnabled(false);
+    LocationButtonView locationButtonView = findViewById(R.id.locationbutton);
+    locationButtonView.setMap(naverMap);
+    //...
+}
         
-    // 위치좌표를 받으면 근처 병원의 정보를 알려주는 API를 호출하는 메서드
-    private void fetchLocation(double LON, double LAT, String SERVICEKEY){
-    ...
+// 위치좌표를 받으면 근처 병원의 정보를 알려주는 API를 호출하는 메서드
+private void fetchLocation(double LON, double LAT, String SERVICEKEY){
+    //...
+    
     // Retrofit을 이용하여 API에 연결하고 TikXml을 이용하여 API로부터 받은 XML을 java 클래스로 변환
     TikXml tikXml = new TikXml.Builder().exceptionOnUnreadXml(false).build();
     Retrofit retrofit = new Retrofit.Builder()
@@ -76,21 +125,31 @@ protected void onCreate(Bundle savedInstanceState) {
                 Log.e("MainActivityRepository", response.errorBody().toString());
             }
         }
-        ...
+    //...
             
-        // API에서 받은 좌표들을 지도에 마커로 표시하는 메서드
-        private void updateMapMarkers(LocationResult result) {
-        resetMarkerList();
-        if (result.body.items.item != null && result.body.items.item.size() > 0) {
-            for (LocationResult.body.items.item newitem : result.body.items.item) {
-                if(newitem.distance <= 1.2 ) {
+// API에서 받은 좌표들을 지도에 마커로 표시하는 메서드
+private void updateMapMarkers(LocationResult result) {
+    resetMarkerList();
+    if (result.body.items.item != null && result.body.items.item.size() > 0) {
+        for (LocationResult.body.items.item newitem : result.body.items.item) {
+            if(newitem.distance <= 1.2 ) {
 
-                    Marker marker = new Marker();
-                    marker.setTag(newitem);
-                    marker.setPosition(new LatLng(newitem.latitude, newitem.longitude));
-                    marker.setMap(naverMap);
-                    ...
+                Marker marker = new Marker();
+                marker.setTag(newitem);
+                marker.setPosition(new LatLng(newitem.latitude, newitem.longitude));
+                marker.setAnchor(new PointF(0.0f, 0.0f));
+                marker.setWidth(80);
+                marker.setHeight(80);
+                marker.setIcon(OverlayImage.fromResource(R.drawable.hospitalmap_marker));
+                marker.setMap(naverMap);
+                marker.setOnClickListener(this);
+                markerList.add(marker);
+            }
+        }
+    }
+}
 ```
+
        
 
 
