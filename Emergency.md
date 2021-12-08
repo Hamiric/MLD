@@ -12,6 +12,16 @@
 -[원주시청(상황별응급처치)](https://www.wonju.go.kr/health/contents.do?key=1690&)
 
 ## 주요 코드
+> cprpdf (xml)
+```xml
+// pdf 실행 시켜주는 github
+ <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/buttonpdf1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+```
+pdf를 실행시켜주는 github이다. 각 pdf xml에 id를 바꿔서 추가해줘야한다.
+
 > Emergency (JAVA)
 ```java
 public class Emergency extends AppCompatActivity {
@@ -35,7 +45,7 @@ public class Emergency extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_cprpdf);
 
-            // 각 pdf xml에 부여한 id 
+            // 각 pdf xml에 부여한 id 입력
             cpr = (PDFView) findViewById(R.id.buttonpdf1);
             cpr.fromAsset("응급상식/심폐소생술.pdf").load();
         }
@@ -85,14 +95,6 @@ public class Emergency extends AppCompatActivity {
     }
 }
 ```
-각 버튼을 클릭했을 때 설정해놓은 pdf가 실행되게 하는 파트이다.
+이미지 버튼 클릭시 발생하는 이벤트 부분이다. 각 버튼을 클릭했을 때 설정해놓은 pdf가 실행되게 하는 역할을 수행한다.
 
-> cprpdf (xml)
-```xml
-// pdf 실행 시켜주는 github
- <com.github.barteksc.pdfviewer.PDFView
-        android:id="@+id/buttonpdf1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-```
-소아 심폐소생술, 기도폐쇄, 상황별 응급처치도 이와 동일하다.
+
