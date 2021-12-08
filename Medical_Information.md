@@ -92,7 +92,7 @@ public class EncyclopediaActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 ```
-ListView에 약학정보원에서 가져온 약물의 정보를 입력한다. 
+ListView에 약학정보원에서 가져온 정보를 추가한다. 의학 뉴스와 부작용 리포트도 동일하다. 
 
 >PDFOpener (JAVA)
 ```java
@@ -119,4 +119,4 @@ public class PDFOpener extends AppCompatActivity {
         //...
         }
 ```
-리스트뷰를 클릭하면 각 리스트에 맞는 pdf파일을 실행시켜주는 파트이다.
+리스트뷰를 클릭하면 각 리스트에 맞는 pdf파일을 실행시켜주는 파트이다. 의학 뉴스와 부작용 리포트도 동일하다.
