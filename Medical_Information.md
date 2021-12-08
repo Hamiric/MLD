@@ -248,7 +248,7 @@ public class PDFOpener extends AppCompatActivity {
                 edt3.setText("");
             }
         });
-
+```
 
 ### 의약품 검색
 >SearchingActivity
