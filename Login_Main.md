@@ -135,8 +135,9 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 }
-``
+```
 앱 실행시, 가장 먼저 나타나는 Activity로 아이디와 비밀번호를 입력해 사용자의 신원을 확인한다. 다른 앱들과 동일하게 처음 로그인 접속할 때를 제외하고는 자동 로그인과 같이 접속방식을 사용자가 제어 할 수 있다.
+
 >JoinActivity
 ```java
  public void click(View view){
@@ -224,10 +225,202 @@ public class LoginActivity extends AppCompatActivity {
     }
 }
 ```
-FireBase Authentication을 통해서 사용자의 인증정보를 저장한다. 이전에는 FirebaseStore를 통해 사용자의 정보(이름, 이메일, 나이등..)을 받고 사용자별 데이터를 갱신하려했으나 쓰이지 않게 되었다. 그래서 사용자의 정보를 임시로 내부DB에 저장하여 간단한 정보들만 불러올 수 있도록 진행하였다. 
+FireBase Authentication을 통해서 사용자의 인증정보를 저장한다. 이전에는 FirebaseStore를 통해 사용자의 정보(이름, 이메일, 나이등..)을 받고 사용자별 데이터를 갱신하려했으나 쓰이지 않게 되었다. 그래서 사용자의 정보를 임시로 내부DB에 저장하여 간단한 정보들만 불러올 수 있도록 진행하였다. 다른 앱들과 동일하게 인증절차를 담당하고 있는 부분이다.
+
+### 메인화면 관련 코드
+>MainActivity (JAVA)
+```java
+//Main Activity의 가장 상위의 Layout. Drawerlayout을 통해 Navigation Bar를 구현
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainUI.MainActivity"
+    android:id="@+id/drawer"
+    android:background="@drawable/main_background">
+    
+      @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        view_init();
+        firebase_init();
+        page_view();
+
+        Drawer_and_Navigation_init();
+        Nav_init();
+        tab_click_event();
+    }
+
+    void view_init(){
+        tab_btn1=(Button)findViewById(R.id.tab_btn1);
+        tab_btn2= (ImageButton) findViewById(R.id.tab_btn2);
+        icon_btn1=(Button)findViewById(R.id.icon_btn1);
+        icon_btn2=(Button)findViewById(R.id.icon_btn2);
+        icon_btn3=(Button)findViewById(R.id.icon_btn3);
+        vp=(ViewPager) findViewById(R.id.vp);
+        img_cicle1=(ImageView)findViewById(R.id.circle1);
+        img_cicle2=(ImageView)findViewById(R.id.circle2);
+        img_cicle3=(ImageView)findViewById(R.id.circle3);
+        img_cicle4=(ImageView)findViewById(R.id.circle4);
+
+    }
+    
+    //인증된 사용자인지 확인하는 함수.
+    void firebase_init(){
+        try {
+            mAuth = FirebaseAuth.getInstance();
+            user = mAuth.getCurrentUser();
+        }catch (Exception e){
+            Intent intent=new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+    
+    //NavigationBar의 이벤트 리스너 
+    void Drawer_and_Navigation_init(){
+        drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
+        nv=(NavigationView) findViewById(R.id.nav_view);
+
+        nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                item.setChecked(true);
+                drawerLayout.closeDrawers();
+
+                int id=item.getItemId();
+                Intent intent;
+                if(id==R.id.menu1){
+                    intent = new Intent(MainActivity.this, CalendarActivity.class);
+                    startActivity(intent);
+                }else if(id==R.id.menu2){
+                    intent = new Intent(MainActivity.this, CalendarActivity.class);
+                    startActivity(intent);
+                }else if(id==R.id.menu3){
+                    intent = new Intent(MainActivity.this, HospitalMapActivity.class);
+                    startActivity(intent);
+                }else if(id==R.id.menu4){
+                    intent = new Intent(MainActivity.this, SearchingActivity.class);
+                    startActivity(intent);
+                }else if(id==R.id.menu5){
+                    intent = new Intent(MainActivity.this, Emergency.class);
+                    startActivity(intent);
+                }else if(id==R.id.menu6){
+
+                }else if(id==R.id.menu7){
+                    SharedPreferences sp=getSharedPreferences("state_login", Activity.MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sp.edit();
+                    editor.putInt("state",1);
+                    editor.commit();
+
+                    mAuth.signOut();
+
+                    intent=new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                    Toast.makeText(getApplicationContext(),"로그아웃하였습니다.", Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                }
+                return true;
+            }
+        });
+    }
+    void Nav_init(){
+        nav_name=(TextView)findViewById(R.id.nav_name1);
+        nav_email=(TextView)findViewById(R.id.nav_email1);
+        
+    }
+
+    void tab_click_event(){
+        tab_btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.END);
+            }
+        });
+    }
+    
+    
+    //Activity중아에 위치한 pageview를 구현하기 위한 코드
+    void page_view(){
+        vp=(ViewPager) findViewById(R.id.vp);
+        ArrayList<Drawable> drawer=new ArrayList<>();
+        drawer.add(getResources().getDrawable(R.drawable.main_page_img1));
+        drawer.add(getResources().getDrawable(R.drawable.main_page_img2));
+        drawer.add(getResources().getDrawable(R.drawable.main_page_img3));
+        drawer.add(getResources().getDrawable(R.drawable.main_page_img4));
+        ImagePagerAdapter adapter=new ImagePagerAdapter(getApplicationContext(),drawer);
+        vp.setAdapter(adapter);
+
+        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
 
 
+            @Override
+            public void onPageSelected(int position) {
+                img_cicle1.setImageDrawable(getResources().getDrawable(R.drawable.main_shape_circle1));
+                img_cicle2.setImageDrawable(getResources().getDrawable(R.drawable.main_shape_circle1));
+                img_cicle3.setImageDrawable(getResources().getDrawable(R.drawable.main_shape_circle1));
+                img_cicle4.setImageDrawable(getResources().getDrawable(R.drawable.main_shape_circle1));
+                switch (position){
+                    case 0:
+                        img_cicle1.setImageDrawable(getResources().getDrawable(R.drawable.main_shape_circle2));
+                        break;
+                    case 1:
+                        img_cicle2.setImageDrawable(getResources().getDrawable(R.drawable.main_shape_circle2));
+                        break;
+                    case 2:
+                        img_cicle3.setImageDrawable(getResources().getDrawable(R.drawable.main_shape_circle2));
+                        break;
+                    case 3:
+                        img_cicle4.setImageDrawable(getResources().getDrawable(R.drawable.main_shape_circle2));
+                        break;
+                }
+            }
 
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+    }
+    
+    //버튼별 이벤트 리스너
+    public void click(View view) {
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.icon_btn1:
+                intent = new Intent(MainActivity.this, CalendarActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.icon_btn2:
+                intent = new Intent(MainActivity.this, SearchingActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.icon_btn3:
+                intent = new Intent(MainActivity.this, HospitalMapActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.tab_btn1:
+                intent = new Intent(MainActivity.this, Emergency.class);
+                startActivity(intent);
+                break;
+        }
+    }
+}
+```
+MainActivity는 사용자가 사용할 첫 화면이기에 많은 뷰들에 대한 이벤트처리를 담당하고 있다. 여러 기능들이 분산되어 있기에, Navigation Bar를 통해 모든 기능을 한눈에 파악 할 수 있도록 해놓았다.
+    
 
 ## 주의사항
 원래는 내부DB에 저장된 투약기록같은 개인 기록들을 웹DB에 올려서 관리하는 방식을 하려 했으나... 개발시간 부족 및 DB오류로 인해 현재 해당 기능은 적용되지 않은 상태이다.
