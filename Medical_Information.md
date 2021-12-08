@@ -422,7 +422,7 @@ public class Medicine_Structure implements Serializable {
     }
 ```
 사용자가 입력한 데이터 만큼 해당 함수를 호출하여 ListView에 뿌려줍니다.
->List_adapter(JAVA)
+>SearchedActivity(JAVA)
 ```java
 @Override
     protected void onCreate(Bundle savedInstanceState) {
