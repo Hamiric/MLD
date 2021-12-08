@@ -22,30 +22,6 @@
 ### 로그인 관련 코드
 >LoginActivity
 ```
-package com.example.mylittledoctor;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
 public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     EditText edt1;
@@ -157,7 +133,96 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 }
-```
+``
+앱 실행시, 가장 먼저 나타나는 Activity로 아이디와 비밀번호를 입력해 사용자의 신원을 확인한다. 다른 앱들과 동일하게 처음 로그인 접속할 때를 제외하고는 자동 로그인과 같이 접속방식을 사용자가 제어 할 수 있다.
+>JoinActivity
+```java
+ public void click(View view){
+        switch (view.getId()){
+            case R.id.join_btn:
+                //계정을 생성한다.
+                mAuth.createUserWithEmailAndPassword(edt2.getText().toString(), edt3.getText().toString())
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                   
+                                }else {
+                                    Toast.makeText(getApplicationContext(),"올바르지 않은 이메일 형식입니다.",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
+                
+                //계정이 만들어졌다면, 계정에 접속을 확인하고 해당 id값을 key로 갖고 이름을 value로 받는 Map형식의 data를 만들고 내부 db에 저장한다.
+                mAuth.signInWithEmailAndPassword(edt2.getText().toString(), edt3.getText().toString())
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    user = mAuth.getCurrentUser();
+                                    uid=user.getUid();
+                                  
+                                    SharedPreferences sp=getSharedPreferences("user_id", Activity.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor=sp.edit();
+                                    editor.putString(uid,edt1.getText().toString());
+                                    editor.commit();
+                                    
+                                    Intent intent=new Intent(JoinActivity.this,LoginActivity.class);
+                                    startActivity(intent);
+
+                                    mAuth.signOut();
+                                    Toast.makeText(getApplicationContext(),"계정생성 완료!",Toast.LENGTH_SHORT).show();
+                                    finish();
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Toast.makeText(getApplicationContext(),"접속실패",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
+                //이전 방식으로 외부 db인 FirebaseStore에 사용자 정보를 저장하는 방식.
+               /* new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        user_data.put("name",edt1.getText().toString());
+                        try{
+                            db=FirebaseFirestore.getInstance();
+                            Log.d("확인","uid:"+uid+"정보:"+user_data.get("name"));
+                            db.collection(uid).document("user_info").set(user_data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Toast.makeText(getApplicationContext(),"계정생성완료!",Toast.LENGTH_LONG).show();
+                                    FirebaseAuth.getInstance().signOut();
+                                    Intent intent=new Intent(JoinActivity.this,LoginActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getApplicationContext(),"계정생성실패",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+
+
+                        }catch (NullPointerException e){
+
+                        }
+
+                    }
+                },3000);*/
+                break;
+            case R.id.back_btn:
+                finish();
+                break;
+            default:
+        }
+    }
+}
+```java
+FireBase Authentication을 통해서 사용자의 인증정보를 저장한다. 이전에는 FirebaseStore를 통해 사용자의 정보(이름, 이메일, 나이등..)을 받고 사용자별 데이터를 갱신하려했으나 쓰이지 않게 되었다. 그래서 사용자의 정보를 임시로 내부DB에 저장하여 간단한 정보들만 불러올 수 있도록 진행하였다. 
 
 ## 주의사항
 원래는 내부DB에 저장된 투약기록같은 개인 기록들을 웹DB에 올려서 관리하는 방식을 하려 했으나... 개발시간 부족 및 DB오류로 인해 현재 해당 기능은 적용되지 않은 상태이다.
