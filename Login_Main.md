@@ -17,7 +17,8 @@
 - SharedPrefernece
 
 ### 메인화면
--
+-DrawerLayout
+-PagerAdapter
 
 ## 주요 코드
 ### 로그인 관련 코드
