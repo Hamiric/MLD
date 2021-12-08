@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="187dp">
 ```
-해당 코드를 이용하여 네이버 지도를 구현한다.
+해당 코드를 이용하여 네이버 지도를 보여준다.
 
 >HospitalMapActivity (JAVA)
 ```java
@@ -149,10 +149,73 @@ private void updateMapMarkers(LocationResult result) {
     }
 }
 ```
-
+위 코드를 이용하여 병원지도 초기 화면을 구현한다.
+병원위치에 대한 XML 데이터는 LocationResult.class로 받는다.
        
+>HospitalInfoActivity (JAVA)
+```java
 
+@Override
+protected void onCreate(@Nullable Bundle savedInstanceState) {
+    //...
+    // 네이버 지도 불러오기
+    mapView = (MapView) findViewById(R.id.Info_map);
+    mapView.onCreate(savedInstanceState);
+    mapView.getMapAsync(this);
+    //...
+}
 
+// 네이버 지도가 불러오면 실행되는 메서드
+@Override
+    public void onMapReady (@NonNull NaverMap naverMap) {
+    //...
+    
+    //이전 Activity에서 병원 하나의 좌표를 받아서 지도의 위치를 고정시킨다.
+    intent = getIntent();
+    WGS84LAT = intent.getDoubleExtra("WGS84LAT", 0);
+    WGS84LON = intent.getDoubleExtra("WGS84LON", 0);
+    LatLng location = new LatLng(WGS84LAT, WGS84LON);
+    CameraPosition cameraPosition = new CameraPosition(location, 16);
+    naverMap.setCameraPosition(cameraPosition);
+    //...
+    
+    //네이버 지도에서 기본적으로 제공하는 UI와 지도 움직임을 모두 비활성화한다.
+    UiSettings uiSettings = naverMap.getUiSettings();
+    uiSettings.setAllGesturesEnabled(false);
+    uiSettings.setZoomControlEnabled(false);
+}
+
+// 병원의 위치좌표를 받으면 해당 병원의 정보를 알려주는 API를 호출하는 메서드
+private void fetchHospital(String hpid, String SERVICEKEY){
+    // HospitalMapActivity의 fetchLocation과 동일
+}
+//...
+    
+//병원에 대한 정보를 지도 아래의 리사이클 뷰에 출력하는 메서드
+public void updatelist(InfoResult result) {    
+    if (list != null && list.size() > 0) {
+        list.clear();
+    }
+
+    for (InfoResult.body_info.items_info.item_info newitem : result.body.items.item) {
+        list.add(newitem);
+
+        hsptlName = findViewById(R.id.Info_dutyName);
+        hsptlName.setText(newitem.getDutyName());
+    }
+
+    RecyclerView recyclerView = findViewById(R.id.Info_recyclerView);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    Info_Adapter adapter = new Info_Adapter(list);
+    recyclerView.setAdapter(adapter);
+}
+//...
+
+```
+위 코드를 이용하여 병원 리스트에서 선택한 병원의 정보를 출력하는 화면을 구성한다.
+병원 정보에 대한 XML 데이터는 InfoResult.class로 받는다.
+    
+    
 
 ## 주의사항
 현재 적용된 'NIA-IFT-OpenAPI 국립중앙의료원-병의원찾기서비스' api가 새벽시간엔 연결이 잘안되는 오류가 있습니다.
