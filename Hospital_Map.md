@@ -149,7 +149,7 @@ private void updateMapMarkers(LocationResult result) {
     }
 }
 ```
-위 코드를 이용하여 병원지도 초기 화면을 구현한다.
+위 코드를 이용하여 병원지도 초기 화면을 구현한다.  
 병원위치에 대한 XML 데이터는 LocationResult.class로 받는다.
        
 >HospitalInfoActivity (JAVA)
@@ -212,11 +212,11 @@ public void updatelist(InfoResult result) {
 //...
 
 ```
-위 코드를 이용하여 병원 리스트에서 선택한 병원의 정보를 출력하는 화면을 구성한다.
+위 코드를 이용하여 병원 리스트에서 선택한 병원의 정보를 출력하는 화면을 구성한다.  
 병원 정보에 대한 XML 데이터는 InfoResult.class로 받는다.
     
     
 
 ## 주의사항
-현재 적용된 'NIA-IFT-OpenAPI 국립중앙의료원-병의원찾기서비스' api가 새벽시간엔 연결이 잘안되는 오류가 있습니다.
+현재 적용된 'NIA-IFT-OpenAPI 국립중앙의료원-병의원찾기서비스' api가 새벽시간엔 연결이 잘안되는 오류가 있습니다.  
 위치 정보를 가져오는데 3 ~ 4초가량의 시간이 소요됩니다. 지도의 중앙부분을 기준으로 병원 리스트가 출력되기 때문에, 지도를 움직이면 다시 리스트를 불러오는 작업이 실행되므로, 막 움직이지 마시고 진득하게 기다려주세요.
