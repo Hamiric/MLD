@@ -162,5 +162,113 @@ public class DBHelper extends SQLiteOpenHelper {
 ```
 내부 DB를 사용하기 위한 DBHelper 클래스. Medicine 테이블에 저장되는 데이터는 name(약품이름), indiredient(주성분), Dosage(투약량), Dosing_number(투약횟수), Dosing_days(투약일수), Year, Month, Day, STATUS(알람설정정보)이다.
 
+>AlramActiviy (JAVA)
+```java
+//...
+    
+    // 알람 실행 메소드
+    void diaryNotification(Calendar calendar) {
+        Boolean dailyNotify = true; // 무조건 알람을 사용
+
+        PackageManager pm = this.getPackageManager();
+        ComponentName receiver = new ComponentName(this, DeviceBootReceiver.class);
+        Intent alarmIntent = new Intent(this, AlramReceiver.class);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, HoUtils.createID(), alarmIntent, 0);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        // 사용자가 매일 알람을 허용했다면
+        if (dailyNotify) {
+
+            if (alarmManager != null) {
+
+                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                        AlarmManager.INTERVAL_DAY, pendingIntent);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                }
+            }
+
+            // 부팅 후 실행되는 리시버 사용가능하게 설정
+            pm.setComponentEnabledSetting(receiver,
+                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                    PackageManager.DONT_KILL_APP);
+
+        }
+    }
+
+    //알람채널을 만드는 메소드
+    public void createNotificationChannel()
+    {
+        //notification manager 생성
+        mNotificationManager = (NotificationManager)
+                getSystemService(NOTIFICATION_SERVICE);
+        // 기기(device)의 SDK 버전 확인 ( SDK 26 버전 이상인지 - VERSION_CODES.O = 26)
+        if(Build.VERSION.SDK_INT
+                >= Build.VERSION_CODES.O){
+            //Channel 정의 생성자( construct 이용 )
+            NotificationChannel notificationChannel = new NotificationChannel(PRIMARY_CHANNEL_ID
+                    ,"Test Notification",mNotificationManager.IMPORTANCE_LOW);
+            //Channel에 대한 기본 설정
+            notificationChannel.setDescription("Notification");
+            // Manager을 이용하여 Channel 생성
+            mNotificationManager.createNotificationChannel(notificationChannel);
+        }
+    }
+    
+    // Notification Builder를 만드는 메소드
+    private NotificationCompat.Builder getNotificationBuilder() {
+        SharedPreferences sharedPreferences = getSharedPreferences("setting", MODE_PRIVATE);
+        NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
+                .setContentTitle("알림 예정")
+                .setContentText(" 아침 " + Integer.toString(sharedPreferences.getInt("m_hour_24", 8)) + " : " + Integer.toString(sharedPreferences.getInt("m_min", 30)) +
+                                " 점심 " + Integer.toString(sharedPreferences.getInt("l_hour_24", 12)) + " : " + Integer.toString(sharedPreferences.getInt("l_min", 30)) +
+                                " 저녁 " + Integer.toString(sharedPreferences.getInt("d_hour_24", 6)) + " : " + Integer.toString(sharedPreferences.getInt("d_min", 30)))
+                .setAutoCancel(false)
+                .setSmallIcon(R.drawable.ic_launcher_foreground);
+        return notifyBuilder;
+    }
+    
+    // Notification을 보내는 메소드
+    public void sendNotification(){
+        // Builder 생성
+        NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
+        // Manager를 통해 notification 디바이스로 전달
+        mNotificationManager.notify(NOTIFICATION_ID,notifyBuilder.build());
+    }
+    
+    // 자정이 될 때마다 알람 재설정
+    void resetAlarm(Calendar calendar) {
+
+        Boolean dailyNotify = true; // 무조건 알람을 사용
+
+        PackageManager pm = this.getPackageManager();
+        Intent alarmIntent = new Intent(this, ResetAlarm.class);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 888, alarmIntent, 0);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        if (alarmManager != null) {
+
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                    AlarmManager.INTERVAL_DAY, pendingIntent);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+            }
+        }
+        // 지정한 시간에 매일 알림
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+    }
+    
+```
+알람 설정 및 재설정하는 부분. 설정된 시간에 맞춰 알람 Notification을 생성시키고, 자정이 될때마다 알람 Notification을 재설정하는 기능들이 있다. 알람의 세부 설정들은 'AlramReceiver'를 통해 설정한다.
+
 ## 주의사항
 현재 약품추가 팝업에서 약품이름을 입력할때, 리스트에 띄워진 약품이름이 아닐경우 오류가 생기고 있습니다.
+DiviceBootRecevie부분을 수정하지 못해, 현재 단말기를 재부팅했을 경우 알람 전체가 설정되지 않는 오류가 있습니다.
+
+
