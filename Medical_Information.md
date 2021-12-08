@@ -16,6 +16,7 @@
 
 ## 주요 코드
 >EncyclopediarActivity (JAVA)
+```java
 public class EncyclopediaActivity extends AppCompatActivity {
     ListView pdfListView;
     ArrayList<String> stringArrayList = new ArrayList<String>();
@@ -94,6 +95,7 @@ public class EncyclopediaActivity extends AppCompatActivity {
 ListView에 약학정보원에서 가져온 약물의 정보를 입력한다. 
 
 >PDFOpener (JAVA)
+```java
 public class PDFOpener extends AppCompatActivity {
 
     PDFView myPDFViewer;
