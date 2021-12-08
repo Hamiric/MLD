@@ -31,7 +31,6 @@ public class DeviceBootReceiver extends BroadcastReceiver {
             SharedPreferences sharedPreferences = context.getSharedPreferences("daily alarm", MODE_PRIVATE);
             long millis = sharedPreferences.getLong("nextNotifyTime", Calendar.getInstance().getTimeInMillis());
 
-
             Calendar current_calendar = Calendar.getInstance();
             Calendar nextNotifyTime = new GregorianCalendar();
             nextNotifyTime.setTimeInMillis(sharedPreferences.getLong("nextNotifyTime", millis));
