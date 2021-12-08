@@ -14,11 +14,11 @@
 ## 사용 기능 (참고)
 ### 로그인
 - [FireBase(Google)](https://firebase.google.com/?hl=ko)
-- [SharedPrefernece]
+- SharedPrefernece
 
 ### 메인화면
-- [DrawerLayout]
-- [PageView]
+- DrawerLayout
+- PageView
 
 ## 주요 코드
 ### 로그인 관련 코드
