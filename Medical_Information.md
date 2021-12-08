@@ -119,4 +119,4 @@ public class PDFOpener extends AppCompatActivity {
         //...
         }
 ```
-리스트뷰를 클릭하면 각 리스트에 맞는 pdf파일을 실행시켜주는 파트이다.
+리스트뷰 클릭시 발생하는 이벤트 부분이다. 리스트뷰를 클릭하면 각 리스트에 맞는 pdf파일을 실행시켜주는 역할을 수행한다.
