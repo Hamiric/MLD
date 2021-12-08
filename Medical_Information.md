@@ -16,10 +16,76 @@
 
 ## 주요 코드
 ```c
-#include <stdio.h>
+public class EncyclopediaActivity extends AppCompatActivity {
+    ListView pdfListView;
+    ArrayList<String> stringArrayList = new ArrayList<String>();
+    ArrayAdapter<String> adapter;
 
-int main(void) {
-  printf("Hello World!");
-  return 0;
-}
+    @Override
+
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_encyclopedia);
+
+        ActionBar actionBar = getSupportActionBar();
+        SearchView searchView = findViewById(R.id.search_view);
+
+
+        pdfListView = findViewById(R.id.myPDFList);
+        
+        
+        // ListView에 목록 추가
+        stringArrayList.add("A형 간염 백신");
+        
+        
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(EncyclopediaActivity.this,android.R.layout.simple_list_item_1,stringArrayList)
+        {
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
+            {
+                View view = super.getView(position, convertView, parent);
+                TextView myText = (TextView) view.findViewById(android.R.id.text1);
+                return view;
+            }
+        };
+
+
+        pdfListView.setAdapter((adapter));
+        pdfListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String item = pdfListView.getItemAtPosition(i).toString();
+                Intent start = new Intent(getApplicationContext(),PDFOpener.class);
+                start.putExtra("pdfFileName",item);
+                startActivity(start);
+            }
+        });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String S) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate((R.menu.menu_encyclopedia_search),menu);
+        MenuItem menuItem = menu.findItem(R.id.search_view);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+        return super.onCreateOptionsMenu(menu);
+    }
 ```
