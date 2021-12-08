@@ -14,9 +14,10 @@
 ## 사용 기능 (참고)
 ### 로그인
 - [FireBase(Google)](https://firebase.google.com/?hl=ko)
-- [SharedPrefernece]
+- SharedPrefernece
 
 ### 메인화면
+-
 
 ## 주요 코드
 ### 로그인 관련 코드
@@ -223,6 +224,8 @@ public class LoginActivity extends AppCompatActivity {
 }
 ```java
 FireBase Authentication을 통해서 사용자의 인증정보를 저장한다. 이전에는 FirebaseStore를 통해 사용자의 정보(이름, 이메일, 나이등..)을 받고 사용자별 데이터를 갱신하려했으나 쓰이지 않게 되었다. 그래서 사용자의 정보를 임시로 내부DB에 저장하여 간단한 정보들만 불러올 수 있도록 진행하였다. 
+
+###메인화면 관련 코드
 
 ## 주의사항
 원래는 내부DB에 저장된 투약기록같은 개인 기록들을 웹DB에 올려서 관리하는 방식을 하려 했으나... 개발시간 부족 및 DB오류로 인해 현재 해당 기능은 적용되지 않은 상태이다.
