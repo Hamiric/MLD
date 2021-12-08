@@ -10,7 +10,7 @@
 https://drive.google.com/file/d/17zLyp69Lq_SMK3iBIY8JH_BWun8-ssqf/view?usp=sharing
 
 ## 사용 메뉴얼
-- https://drive.google.com/file/d/1yArW_oi4luACBxEODMdum9r2-X6S1MMJ/view?usp=sharing (pdf파일)
+https://drive.google.com/file/d/1yArW_oi4luACBxEODMdum9r2-X6S1MMJ/view?usp=sharing (pdf파일)
 
 ## 개요
 - [로그인 / 메인](https://github.com/Hamiric/MLD/blob/main/Login_Main.md)
