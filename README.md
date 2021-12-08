@@ -6,7 +6,7 @@
 **My Little Doctor**는 Android Studio(Java)로 작성되었습니다. 팀원들의 JAVA 및 Android Studio관련 실력 향상과 성장을 목표로 하는 프로젝트입니다. 사용자들에게 의약품과 관련된 정보제공과, 병원위치 정보제공 및 투약기록저장과 알람과 같은 기능을 제공합니다.
 
 
-## 설치법 (APK 파일)
+## 설치 (APK 파일)
 https://drive.google.com/file/d/17zLyp69Lq_SMK3iBIY8JH_BWun8-ssqf/view?usp=sharing
 
 ## 개요
