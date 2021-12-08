@@ -15,7 +15,7 @@
 - [의약품안전나라](https://nedrug.mfds.go.kr/index)
 
 ## 주요 코드
-```c
+>EncyclopediarActivity (JAVA)
 public class EncyclopediaActivity extends AppCompatActivity {
     ListView pdfListView;
     ArrayList<String> stringArrayList = new ArrayList<String>();
@@ -37,6 +37,8 @@ public class EncyclopediaActivity extends AppCompatActivity {
         
         // ListView에 목록 추가
         stringArrayList.add("A형 간염 백신");
+        //...
+        
         
         
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(EncyclopediaActivity.this,android.R.layout.simple_list_item_1,stringArrayList)
@@ -89,3 +91,30 @@ public class EncyclopediaActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 ```
+ListView에 약학정보원에서 가져온 약물의 정보를 입력한다. 
+
+>PDFOpener (JAVA)
+public class PDFOpener extends AppCompatActivity {
+
+    PDFView myPDFViewer;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pdfopener);
+
+
+
+
+        myPDFViewer = (PDFView) findViewById(R.id.pdfViewer);
+        String getItem = getIntent().getStringExtra("pdfFileName");
+
+
+
+        // 리스트 뷰를 클릭하면 설정해놓은 pdf파일  
+        if(getItem.equals("알벤다졸")){
+            myPDFViewer.fromAsset("약물백과/알벤다졸.pdf").load();
+        //...
+        }
+```
+리스트뷰를 클릭하면 각 리스트에 맞는 pdf파일을 실행시켜주는 파트이다.
