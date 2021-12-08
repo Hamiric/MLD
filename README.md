@@ -9,6 +9,8 @@
 ## 설치 (APK 파일)
 https://drive.google.com/file/d/17zLyp69Lq_SMK3iBIY8JH_BWun8-ssqf/view?usp=sharing
 
+## 사용 메뉴얼
+
 ## 개요
 - [로그인 / 메인](https://github.com/Hamiric/MLD/blob/main/Login_Main.md)
 - [건강정보](https://github.com/Hamiric/MLD/blob/main/Medical_Information.md)
