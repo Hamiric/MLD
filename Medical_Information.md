@@ -15,9 +15,9 @@
 - [의약품안전나라](https://nedrug.mfds.go.kr/index)
 
 ## 사용 기능
--JXL 
--BaseAdapter
--Serializable
+- JXL 
+- BaseAdapter
+- Serializable
 
 ## 주요 코드
 ### 건강상식
